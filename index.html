@@ -6,7 +6,17 @@
 	<title>CSS3 </title>
 	<link href="style.css" rel="stylesheet"</link>
     </meta>
-</head>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("#hide").click(function(){
+    $("p").hide((1000));
+  });
+  $("#show").click(function(){
+    $("p").show((1000));
+  });
+});
+</script></head>
 <style type="text/css">
 
 
@@ -40,7 +50,7 @@ tr:nth-child(even){
 }
 h1{
 	background-color:#003344;color:white;font-weight:bold;font-size:30px;
-	text-align:center;padding:10px;margin:0px;width:1600px;
+	text-align:center;padding:10px;margin:0px;
 }
 .content1{
 	text-align:center;padding:10px;
@@ -164,6 +174,12 @@ ul.music a{
 	<h1>老蔡的网页！
 	<embed src="aa.jpg" ></embed>
 	</h1>
+<p>这是我的网页。最初产生于九十年代，后来不用了，现经改进再启用，但内容完全不同了，用于保存我的链接资料。</p>
+
+<button id="hide">Hide</button>
+<button id="show">Show</button>
+
+
 	<nav>
 		<div class="logo">我的著作链接：</div>
 		<div class="menu">我的网页链接：</div>
@@ -238,12 +254,13 @@ ul.music a{
 					<li><a href="https://superpyq.com/covid/ca/" target="_blank">加拿大COVID-19每日病例统计</a></li>
 					<li><a href="https://www.ottawapublichealth.ca/en/reports-research-and-statistics/daily-covid19-dashboard.aspx" target="_blank">渥太华COVID-19每日病例统计</a></li>
 					<li><a href="https://coronavirus.jhu.edu/map.html" target="_blank">COVID-19 JPU每日病例统计</a></li>
+					<li><a href="https://covid19-projections.com/" target="_blank">Covid-19 Projection Using Machine Learning(Youyang Gu)</a></li>
 					<li><a href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html#a1" target="_blank">Canada Covid-19 图例</a></li>
 				</ul>
 		</div>
 		
 				<ul class="item">
-					<li><a href="https://www.github.com/">我的github</a></li>
+					<li><a href="https://www.github.com/" target="_blank">我的github</a></li>
 					<li><a href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html" target="_blank">wordcloud</a></li>
 					<li><a href="https://docs.github.com/cn/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll" target="_blank">使用 Jekyll 设置 GitHub Pages 站点</a></li>
 					<li><a href="https://github.com/fxsjy/jieba/" target="_blank">中文分词jieba</a></li>
