@@ -2,17 +2,19 @@
 <html>
 <head>
 	<meta charset="utf-8">
-	<meta name="viewpoint" content=device-width, initial-scale=1, maximum-scale=1"/>
+	<meta name="viewpoint" content="width=device-width, initial-scale=1, maximum-scale=1"/>
 	<title>CSS3 </title>
 	<link href="style.css" rel="stylesheet"</link>
     </meta>
 </head>
 <style type="text/css">
-
-
 /*	标签名称选择器。*/
 body{
-	font-size:16px;font-family:"微软黑体";background-color:#eeeeee;
+	margin-left:30px;font-size:16px;font-family:"微软黑体";background-color:#eeeeee;
+}
+h1{
+	background-color:#003344;color:white;font-weight:bold;font-size:30px;
+	text-align:center;padding:10px;margin:0px;
 }
 h3{
 	padding:5px;font-size:16px;text-decoration:underline;
@@ -38,10 +40,6 @@ tr:nth-child(even){
 .head{
 	background-color:#003344;
 }
-h1{
-	background-color:#003344;color:white;font-weight:bold;font-size:30px;
-	text-align:center;padding:10px;margin:0px;
-}
 .content1{
 	text-align:center;padding:10px;
 	width:400px;margin-left:auto;margin-right:auto;padding:10px;border:1px dashed #888888;margin-top:10px;margin-bottom:10px;
@@ -58,18 +56,22 @@ nav{
 nav>.logo{
 	flex:none;width:320px;
 	background-color:#ffcccc;
+	text-align:center;
 }
 nav>.menu{
 	flex:none; width:340px;
 	background-color:#ccccff;
+	text-align:center;
 }
 nav>.user{
 	flex:none;width:360px;
 	background-color:#ccffcc;
+	text-align:center;
 }
 nav>.selector{
 	flex:none;width:350px;
 	background-color:#FF40oo;
+	text-align:center;
 }
 main{
 	display:flex;width:1600px;
@@ -80,10 +82,8 @@ main{
 main>.item{
 	flex:none;
 	width:320px;margin：10px；
-	color:color:#ffffff;
+	color:#ffffff;
 }
-}
-
 nav>.clicker{
 	flex:none;width:320px;
 	background-color:blue;
@@ -118,10 +118,12 @@ main2>.item{
 div.box{
 		width:280px;padding:10px;margin:10px;background-color:white;
 		display:inline-block;vertical-align:top;
+		text-align:center;
 } 
 div.box1{
 		width:280px;padding:10px;margin:10px;background-color:white;
 		display:inline-block;vertical-align:media;
+		text-align:center;		
 } 
 
 .title{
@@ -156,7 +158,10 @@ ul.demo a{
 ul.music a{
 	color:#0088ee;text-align:left;
 }
-
+@media screen and (max-width:600px) {
+	.head{font-size:24px;}
+	.content{width:100%;text-align:center;}
+}
 </style>
 
 
@@ -166,25 +171,25 @@ ul.music a{
 	</h1>
 	<nav>
 		<div class="logo">Windows电脑软件：</div>
-		<div class="menu">有用软件</div>
+		<div class="menu">有用软件:</div>
 		<div class="user">影视网站：</div>
 		<div class="selector">我的音乐链接：</div>
 	</nav>
 	<main>
 				<ul class="item"> 
-					<li><a href="https://sparanoid.com/lab/7z" target="_blank">No.9.7-Zip</br></a></li>
-					<li><a href="https://geekuninstaller.com" target="_blank">No.8.Geek Uninstaller</br></a></li>
-					<li><a href="https://www.microsoft.com/en-us/edge" target="_blank">No.7.Microsoft Edge</br></a></li>
-					<li><a href="https://potplayer.daum.net/?lang=zh_CN​" target="_blank">No.6.PotPlayer</br></a></li>
-					<li><a href="http://www.internetdownloadmanager.com" target="_blank">No.5.极速下载工具IDM</br></a></li>
-					<li><a href="http://cn.ejie.me" target="_blank">No.4.Clover</br></a></li>
-					<li><a href="https://www.ccleaner.com" target="_blank">No.3.CCleaner</br></a></li>
-					<li><a href="https://www.techspot.com/downloads/6843-wox.html" target="_blank">No.2.Wox 根据键入启动、存取程序和web 内容</br></a></li>
-					<li><a href="https://www.voidtools.com/zh-cn/" target="_blank">No.1.文件搜索软件Everything</br></a></li>
+					<a href="https://sparanoid.com/lab/7z" target="_blank">No.9.7-Zip</br></a>
+					<a href="https://geekuninstaller.com" target="_blank">No.8.Geek Uninstaller</br></a>
+					<a href="https://www.microsoft.com/en-us/edge" target="_blank">No.7.Microsoft Edge</br></a>
+					<a href="https://potplayer.daum.net/?lang=zh_CN​" target="_blank">No.6.PotPlayer</br></a>
+					<a href="http://www.internetdownloadmanager.com" target="_blank">No.5.极速下载工具IDM</br></a>
+					<a href="http://cn.ejie.me" target="_blank">No.4.Clover</br></a>
+					<a href="https://www.ccleaner.com" target="_blank">No.3.CCleaner</br></a>
+					<a href="https://www.techspot.com/downloads/6843-wox.html" target="_blank">No.2.Wox 根据键入启动、存取程序和web 内容</br></a>
+					<a href="https://www.voidtools.com/zh-cn/" target="_blank">No.1.文件搜索软件Everything</br></a>
 				</ul>
 		
 				<ul class="item">
-					<li><a href="https://www.youtube.com/watch?v=xEewU...​" target="_blank">2020年最新永久免费云服务器VPS （HeroKu）</a></li>
+					<a href="https://www.youtube.com/watch?v=xEewU...​" target="_blank">2020年最新永久免费云服务器VPS （HeroKu）</a></li>
 				</ul>
 
 				<ul class="item">
@@ -209,7 +214,6 @@ ul.music a{
 					<li><a href="https://www.youtube.com/watch?v=c57aFp4LAO4" target="_blank">蓝色多瑙河</a></li>
 					<li><a href="https://www.youtube.com/watch?v=zzfTW6HbrvU" target="_blank">皇帝圓舞曲</a></li>
 					<li><a href="https://www.youtube.com/watch?v=aOcWrhCd4M8" target="_blank">春之声圓舞曲</a></li>
-				</ul>
 	</main>	
 	<nav>
 		<div class="logo">我的课程链接：</div>
