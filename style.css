@@ -1,0 +1,118 @@
+main{
+	display:flex; flex-wrap:wrap;
+	justify-content:center;
+	align-items:stretch;
+    background-color:#cccccc;
+}
+main>.box
+{	flex:auto;
+	background-color:#ffcccc;
+	text-align:center;
+}
+nav>.logo{
+	flex:auto;
+	background-color:#ffcccc;
+	text-align:center;
+}
+nav>.user{
+	flex:auto;
+	background-color:#ccffcc;
+	text-align:center;
+}
+nav>.menu{
+	flex:auto; 
+	background-color:#ccccff;
+	text-align:center;
+}
+nav>.box{
+	flex:auto;border-radius: 10px;;
+	background-color:#ffcccc;
+	text-align:center;
+}
+nav>.clicker{
+	flex:none;width:320px;
+	background-color:blue;
+	text-align:right;
+}<!--标签名称选择器。-->
+body{
+	font-size:16px;font-family:"微软黑体";background-color:#00B315;
+}
+h1{
+	border-radius:10px;background-color:#003344;color:white;font-weight:bold;font-size:30px;
+	text-align:center;padding:10px;margin:0px;
+}
+h3{
+	padding:5px;font-size:16px;text-decoration:underline;
+	text-align:center;padding:10px;
+}
+table{
+	text-align:center;
+	width:400px;margin-left:auto;margin-right:auto;border-bottom:1px solid #888888;
+	border-collapse:collapse;
+}
+td{
+	border-bottom:1px solid #888888;padding:10px;
+}
+<!--表格中的第一对 tr -->
+tr:nth-child(1){
+	background-color:#7788aa;color:#ffffff;
+}
+/* 表格中的第偶数对 tr */
+tr:nth-child(even){
+	background-color:#e8e8e8;
+}
+/*	class 选择器。*/
+.head{
+	background-color:#003344;
+}
+div.keyword{
+	color:red
+}	
+ul{
+	background-color:rgb(6, 253, 109);text-align:left;padding:10px;border-radius: 10px;;
+}
+.content{
+	background-color:greenyellow;text-align:center;padding:10px;
+	width:1000px;margin-left:auto;margin-right:auto;
+}
+div.box{
+	border-radius:10px;width:400px;padding:10px;margin:10px;background-color:white;
+		display:inline-block;vertical-align:top;
+} 
+
+.title{
+	font-weight:bold;font-size:16px;
+	text-align:center;padding:10px;
+}
+
+<!--id 选择器。-->
+#btn{
+	border:1px solid #888888;
+	background-color:#ffffff;padding:5px;;margin-left:auto;margin-right:auto;
+}
+<!--虚拟选择器：搭配其他选择器使用。-->
+<!-- :hover 虚拟选择器：鼠标移到目标上时，调用一组设定 -->
+#btn:hover{
+	background-color:#888888;
+}
+<!-- :focus 虚拟选择器：当目标取得焦点时，调用一组设定 -->
+input:focus{
+	border:2px solid #ff0000;
+}
+<!--	阶层式选择器：搭配其他选择器使用
+ul.favorite a{
+	color:#0000ff;text-align:left;
+}
+ul.demo a{
+	color:#008800;text-align:left;
+}
+ul.music a{
+	color:#0088ee;text-align:left;
+}
+@media screen and (max-width:500px){
+	.head{font-size:24px;}
+	.content{width:100%;text-align:center;
+     main>.box{
+         width:90%
+     }   
+}
