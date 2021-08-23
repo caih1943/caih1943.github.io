@@ -77,18 +77,28 @@ ul{
 }
 div.box{
 	border-radius:10px;width:400px;padding:10px;margin:10px;background-color:white;
-		display:inline-block;vertical-align:top;
+		display:inline-block;vertical-align:top;overflow:auto;
 } 
 
 .title{
 	font-weight:bold;font-size:16px;
 	text-align:center;padding:10px;
 }
-
+.button{
+	backgroud-color：#f44336 /*red */
+	border: none; color:white; padding；15px 32px;
+	text-align:center; display:inline-block;font-size:16px;
+	cursor:pointer;
+}
+footer{
+	padding:5px;font-size:16px;text-decoration:none;
+	background-color:#003344;color:white;font-weight:bold;font-size:18px;
+	text-align:center;padding:10px;text-align:center; 
+}
 <!--id 选择器。-->
 #btn{
 	border:1px solid #888888;
-	background-color:#ffffff;padding:5px;;margin-left:auto;margin-right:auto;
+	background-color:#4CAF50;padding:5px;;margin-left:auto;margin-right:auto;
 }
 <!--虚拟选择器：搭配其他选择器使用。-->
 <!-- :hover 虚拟选择器：鼠标移到目标上时，调用一组设定 -->
