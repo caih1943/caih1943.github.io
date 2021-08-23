@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"></meta>
+	<title>CSS 教学</title>
+	<style type="text/css">
+/*	标签名称选择器。*/
+body{
+	font-size:16px;font-family:"微软黑体"
+}
+h3{
+	padding:5px;font-size:16px;text-decoration:underline;
+}
+/*	class 选择器。*/
+div.title{color:blueviolet;font-weight:bold;font-size:24px}
+div.content{background-color:rgb(0, 255, 149);width:400px;padding:10px;border:1px dashed #ff1414;margin-top:10px;margin-bottom:10px;}
+div.keyword{color:red}	
+
+/*	id 选择器。*/
+#btn{
+	border:1px solid #888888;
+	background-color:#ffffff;padding:5px;
+}
+/*	虚拟选择器：搭配其他选择器使用。*/
+/* :hover 虚拟选择器：鼠标移到目标上时，调用一组设定 */
+#btn:hover{
+	background-color:#888888;
+}
+/* :focus 虚拟选择器：当目标取得焦点时，调用一组设定 */
+input:focus{
+	border:2px solid #ff0000;
+}
+/*	阶层式选择器：搭配其他选择器使用
+ul.favorite a{
+	color:#0000ff;
+}
+ul.demo a{
+	color:#008800;
+}
+</style>
+</head>
+
+<body>
+	<div class="title">1. 老蔡的网页！</div>
+	<div class="content">
+	我的一个网页，学习CSS<span class="keyword">点缀网页</span>。</br>
+	CSS很有趣！
+	</div>
+	
+	<div class="title">2. 点缀一下网页。(CSS)</div>
+	<h3> 2.1 CSS 基础知识</h3>
+	<div class="content">
+	1）. CSS 基础语法。</br>
+	2）. CSS Box Model。</br>
+	3）. 标签的宽度与高度选择。</br>
+	4）. CSS 选择器简介。</br>
+	5）. 定位模式简介。</br>
+	</div>
+	<h3> 2.2 CSS 选择器 - 详细介绍</h3>
+	<div class="content">
+	1）. 标签名称选择器。</br>
+	2）. class 选择器。</br>
+	3）. id 选择器。</br>
+	4）. 虚拟选择器。</br>
+	5）. 阶层式选择器。</br>
+	</div>
+	<h3> 2.3 CSS 表格样式</h3>
+	
+	<div class="title">3. 网页的排版。</div>
+	<h3> 3.1 基本排版</h3>
+	<div class="content">
+	a）. 如何应付不同荧幕的解析度。</br>
+	b）. 如何让内容左右并排。</br>	
+	c）. 因应式设计：Responsive Web Design(RWD)。</br>
+	</div>
+	<h3> 3.2 RWD回应式设计</h3>
+	<h3> 3.3 CSS3 Flexbox 基本教学</h3>
+	<h3> 3.4 CSS3 Flexbox 与 RWD回应式设计</h3>
+	
+	<div class="title">4. HTMP5 与 CSS3 整合运用</div>
+	<h3> 4.1 FORM 表单设计与验证</h3
+	
+	<h3> 我的网页链接</h3>
+	<div class="content">
+		<li><a href="https://www.youtube.com/">我的YOUTUBE</a></li>
+		<li><a href="https://mail.google.com/mail/u/2/?tab=wm&zx=1swth9fdvn7x#inbox">我的EMAIL</a></li>
+		<li><a href="https://mail.protonmail.com/inbox">我的ProtonMail</a></li>
+		<li><a href="https://translate.yandex.com/?lang=en-zh&text=GitHub%20is%20a%20code%20hosting%20platform%20for%20version%20control%20and%20collaboration.%20It%20lets%20you%20and%20others%20work%20together%20on%20projects%20from%20anywhere.%0A%0AThis%20tutorial%20teaches%20you%20GitHub%20essentials%20like%20repositories%2C%20branches%2C%20commits%2C%20and%20Pull%20Requests.%20You%E2%80%99ll%20create%20your%20own%20Hello%20World%20repository%20and%20learn%20GitHub%E2%80%99s%20Pull%20Request%20workflow%2C%20a%20popular%20way%20to%20create%20and%20review%20code.">我的翻译Yandex</a></li>
+		<li><a href="https://www.github.com/">我的github</a></li>
+	</div>
+	<h3> 3.1 我的著作链接</h3>
+	<div class="content">
+		<li><a href="http://cn-library.rukomos.ru/zhong_guan_cun_hui_yi__265650-audiobook-read_online.html">中关村回忆</a></li>
+		<li><a href="https://www.amazon.ca/%E6%8E%A2%E7%B4%A2%E6%B5%99%E5%A4%A7-%E6%9D%B1%E6%96%B9%E5%8A%8D%E6%A9%8B-%E4%B9%8B%E8%AA%AA-%E9%87%8D%E8%B5%B0%E6%B5%99%E5%A4%A7%E8%A5%BF%E9%81%B7%E8%B7%AF-Traditional-ebook/dp/B08136Q13N/ref=sr_1_1?keywords=%28Chinese+Edition%29B08136Q13N&qid=1573150194&s=digital-text&sr=1-1">探索浙大《东方剑桥》之说</a></li>
+	</div>		
+	<h3> 3.3 和我联络</h3>
+	<div class="content">
+		填写信息<input type="text" /> <button id="btn">送出</button>
+	
+	</div>
+	<div class="title">JavaScript教学大纲</div> 
+	<h3> 1.网页的前端工程</h3>
+	<div class="content">
+	1）. 现代网页的必需品</br>
+	2）. Java V.S. JavaScript</br>
+	</div>
+	<h3> 2.变数与运算子</h3>
+	<div class="content">
+	1）. 资料（data）:数字、字符串、布尔值、物件（对象）。</br>
+	2）. 变量：可存放资料的空间，可命名。</br>
+	3）. 运算符号：可对资料做操作的符号。。</br>
+	</div>
+	<h3> 3. JavaScript 流程控制</h3>
+	<div class="content">
+	1）. 判断。</br>
+	2）. 循环。</br>
+	3）. 循环追踪。</br>
+	</div>
+	<h3> 4. JavaScript 函数基础</h3>
+	<div class="content"></div>
+	1）. 函数基础。</br>
+	2）. 函数基本使用循环。</br>
+	3）. 延申观览。</br>
+	</div>
+	<h3> 5.JavaScript 物件</h3>
+	<div class="content">
+	1）. 基础使用:a.建立空白物件, b.建立物件的属性和方法（成员）c.使用物件。</br>
+	2）. 建构函数。</br>
+	</div>
+	<h3> 6.HTML DOM基本概念选单开合范例</h3>
+	<div class="content">
+	1）. 基础使用。</br>
+	2）. 建构函数。</br>
+	</div>
+	<h3> 7.JavaScript 事件处理</h3>
+	<div class="content">
+	1）. 基础教学。</br>
+	2）. 事件物件。</br>
+	</div>
+	<h3> 8.JavaScript 自动排程</h3>
+	<div class="content">
+	1）. 基础教学。</br>
+	2）. 事件物件。</br>
+	</div>
+	<h3> 9.JavaScript AJAX 基础</h3>
+	<div class="content">
+	1）. 基础教学。</br>
+	2）. 事件物件。</br>
+	</div>
+	<h3> 10.JavaScript JSON 基础</h3>
+	<div class="content">
+	1）. JSON 基础。</br>
+	2）. 事件物件。</br>
+	</div>
+</body>
+</html>

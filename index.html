@@ -10,12 +10,17 @@
 	
 	<!--引入外部CSS档案-->
 	<link rel="stylesheet" href="style.css" />
+	<script>
+	windows.onload=function(){
+		var box=document.getElementById("box");
+		box.scrollTop=0;box.scrollLeft=0;
+	}
+	</script>
 </head>
 
 <body>
 	<h1>老蔡的网页！
-	<button id="next"><a href="laocaiHome.html">Next</a>
-	</button>	
+	<a href="laocaiHome.html" class="button">Next</a>
 	</h1>
 	<p>这是我的网页。最初产生于九十年代，后来不用了，现经改进再启用，但内容完全不同了，用于保存我的链接资料。</p>
 
@@ -84,11 +89,12 @@
 					<li><a href="https://www.sololearn.com/learning/1073/2269/4557/1" target="_blank">sololearn quiz</a></li>
 					<li><a href="https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg" target="_blank">Morvan课程</a></li>
 					<li><a href="https://www.youtube.com/channel/UC2ggjtuuWvxrHHHiaDH1dlQ" target="_blank">Hung-yi Lee课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=gvRXjsrpCHw&ab_channel=GrandmaCan-%E6%88%91%E9%98%BF%E5%AC%A4%E9%83%BD%E6%9C%83" target="_blank">3小时SQL课程</a></li>
+					<li><a href="https://codepen.io/pen/" target="_blank">CodePen</a></li>
 					<li><a href="https://www.youtube.com/watch?v=CLUPkcLQm64" target="_blank">1小时HTML课程</a></li>
 					<li><a href="https://www.youtube.com/watch?v=Ml78vnNTBLw" target="_blank">2小时CSS课程</a></li>
 					<li><a href="https://www.youtube.com/watch?v=yZwlW5INhgk" target="_blank">3小时Javascript课程</a></li>
 					<li><a href="https://www.youtube.com/watch?v=zdMUJJKFdsU" target="_blank">4小时Python课程</a></li>
+					<li><a href="https://www.youtube.com/watch?v=gvRXjsrpCHw&ab_channel=GrandmaCan-%E6%88%91%E9%98%BF%E5%AC%A4%E9%83%BD%E6%9C%83" target="_blank">3小时SQL课程</a></li>
 					<li><a href="https://www.youtube.com/watch?v=mYX9AaJF2lw&ab_channel=GrandmaCan-%E6%88%91%E9%98%BF%E5%AC%A4%E9%83%BD%E6%9C%83" target="_blank">Python自动化操作Excel课程</a></li>
 					<li><a href="hhttps://www.youtube.com/watch?v=ximjGyZ93YQ&ab_channel=GrandmaCan-%E6%88%91%E9%98%BF%E5%AC%A4%E9%83%BD%E6%9C%83" target="_blank">网页爬虫、网页自动化课程</a></li>
 					<li><a href="https://www.google.com/search?q=The+10+Days+of+JavaScript+Day&sxsrf=ALeKk00Ml0Cv9MLMj_bmLFspd3o3fyKiyQ:1628977987717&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjyxrfyv7HyAhWHmeAKHR9aCpcQ_AUoAnoECAEQBA&biw=1539&bih=829/" target="_blank">10天Javascript 课程</a></li>
@@ -124,17 +130,39 @@
 				</ul>
 		</div>	
 	</main>
+
+	<h3>西南联大</h3>
+	<div class="content">
+		
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/IZYxmkCfuwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>一、八音合奏</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/TvUECHj5-0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>二、刚毅坚卓</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/Hgy7YC_5NRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>三、大学之大</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/UjwiyLGdu94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>四、火的洗礼</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/yK4pXaP1ot4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>五、嘉荫长留</iframe>
+			</span>
+	</div>
+	<h3>大型系列纪录片《先生》十集</h3>
+	<div class="content">
+		<ul class="items">					
+			<a href="https://mp.weixin.qq.com/s/bSlv2CkBv0zkYiH9SfXzxw" target="_blank">大型系列纪录片《先生》十集</a>
+		</ul>
+	</div>
+		
+	<br/>	
 	<h3>我的学习视频</h3>
 	<div class="content">
-			<span class="items">
-				<video src="The 10 Days of JavaScript Day 0.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<iframe width="400" height="315" src="https://www.youtube.com/embed/K4b7LdWAVyw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</span>
-	
-	<br/>	
-	<div class="content">
+		<span class="items">
+			<video src="The 10 Days of JavaScript Day 0.mp4" controls width="400">浏览器无法载入</video>
+		</span>
 			<span class="items">
 				<iframe width="400" height="315" src="https://www.youtube.com/embed/bYshPb-wEWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 				<iframe width="400" height="315" src="https://www.youtube.com/embed/CXnnw9rQH5I" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>	
@@ -143,31 +171,32 @@
 					<iframe width="400" height="315" src="https://www.youtube.com/embed/rTK0Gmf57jE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 					<iframe width="400" height="315" src="https://www.youtube.com/embed/ZWxWx-vmubI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 			</span>
-	
+	<h3>蔡邦华院士诞辰110周年纪念视频</h3>
+			<div class="content">
+				<span class="items">
+					<video src="cai_1.mp4" controls width="400">浏览器无法载入</video>
+				</span><span class="items">
+						<video src="caibanghua110_3.mp4" controls width="400">浏览器无法载入</video>
+					</span>
+			</div>
+			
 	<h3>我的旅游视频</h3>
 	<div class="content">
 			<span class="items">
-				<video src="旅游记/云南昆明行.mp4" controls width="400">浏览器无法载入</video>
+				<video src="旅游记/kunming.mp4" controls width="400">浏览器无法载入</video>
 			</span>
 			<span class="items">
 				<video src="旅游记/iceland.mp4" controls width="400">浏览器无法载入</video>
 			</span>
 			<span class="items">
-				<video src="旅游记/北欧游轮十天游.mp4" controls width="400">浏览器无法载入</video>
+				<video src="旅游记/youlun.mp4" controls width="400">浏览器无法载入</video>
 			</span>
 			<span class="items">
-				<video src="旅游记/挪威峡湾游.mp4" controls width="400">浏览器无法载入</video>
+				<video src="旅游记/norway.mp4" controls width="400">浏览器无法载入</video>
 			</span>
 			<span class="items">
-				<video src="旅游记/美国西部游.mp4" controls width="400">浏览器无法载入</video>
+				<video src="旅游记/wus.mp4" controls width="400">浏览器无法载入</video>
 			</span>
-			<span class="items">
-				<video src="旅游记/冰岛游.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<video src="蔡邦华110周年纪念活动.mp4" controls>浏览器无法载入</video>
-			</span>
-	
 	<br/>	
 
 	<h3>和我联络</h3>
@@ -175,5 +204,6 @@
 		填写信息<input type="text" /> <button id="btn">送出</button>
 	</div>	
 </div>
+<footer>该网站共二页，请按<a href="laocaiHome.html" class="button">Next</a>按钮转第二页。</footer>
 </body>
 </html>
