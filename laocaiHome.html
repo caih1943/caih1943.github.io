@@ -6,7 +6,43 @@
 	<title>CSS3 </title>
 	<link href="style.css" rel="stylesheet"</link>
     </meta>
-</head>
+	<style type="text/css">
+		.dialog{
+			position:fixed;top:100px;left:50%;width=100px;transform(-100px,0px);
+			padding:10px;border:1px solid #888888;
+			background-color:#eeeeee;box-shadow:0px 0px 10px #000000;
+			display:none;
+		}
+		.dialog>.close{
+			position:absolute;top:2px;right:2px:cursor:pointer;
+		}
+		</style>
+		<script>
+		var dialog;
+		window.onload=function(){
+			dialog=document.getElementById("dialog");
+		};
+		function showDialog(){
+			dialog.style.display="block";
+		}
+		function closeDialog(){
+			dialog.style.display="none";
+		}
+		</script>
+		</head>
+
+<script>
+	var dialog;
+	windows.onload=function(){
+		dialog=document.getElementById("dialog");
+	};
+	function ShowDialog(){
+		dialog.style.display="block";
+	}
+	function close.Dialog (){
+		dialog.style.display="none";
+	}
+</script>
 <body>
 	<h1>老蔡的网页！
 		<a href="index.html" class="button">Back</a>
@@ -95,7 +131,15 @@
 		</div>		
 		<div class="box">
 				<ul class="items">
-					<li><a href="https://screenrec.com/" target="_blank">ScreenRec</a></li>
+					<li><a href="https://shotcut.org/" target="_blank">Shotcut</a></li>
+					<li><a href="https://www.nchsoftware.com/videopad/..." target="_blank">VideoPad</a></li>
+					<li><a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">DaVinci Resolve</a></li>
+					<li><a href="http://www.videosoftdev.com/" target="_blank">VSDC</a></li>
+					<li><a href="https://www.openshot.org/zh-hans/" target="_blank">Openshot</a>
+					<li><a href="https://fxhome.com/product/products" target="_blank">HitFilm</a></li>
+					<li><a href="https://kdenlive.org" target="_blank">Kdenlive</a></li>
+					<li><a href="https://www.apple.com/imovie/" target="_blank">iMovie</a>
+					</li><li><a href="https://screenrec.com/" target="_blank">ScreenRec</a></li>
 					<li><a href="https://mathewsachin.github.io/Captura/" target="_blank">Captura</a></li>
 					<li><a href="https://obsproject.com/" target="_blank">OBS Studio</a></li>
 					<li><a href="http://bit.ly/3oeXDbP" target="_blank">Uninstaller</a></li>
@@ -270,6 +314,14 @@
 		</tr>
 	</table>
 	<br/>	
+	<h3>对话框</h3>
+
+		<button onclick="showDialog()">联络信息</button>
+		<div id="dialog" class="dialog">
+		<div onclick="closeDialog()">X</div>
+			在这里面加入对话框中的内容<br/>
+			例如Email:test@test.com
+		</div><br/>
 	<footer>该网站共二页，请按<a href="index.html" class="button">Back</a>按钮转第一页。</footer>
 </body>
 </html>
