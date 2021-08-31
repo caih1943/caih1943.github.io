@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8"/>
+	<meta name="description" content="西南联大视频" />
+	<meta name="author" content="Simon Cai" />
+    <title>西南联大网页</title>
+
+    <!--引入外部CSS档案-->
+	<link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <h3>西南联大</h3>
+	<div class="content">		
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/IZYxmkCfuwI" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>一、八音合奏</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/TvUECHj5-0s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>二、刚毅坚卓</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/Hgy7YC_5NRQ" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>三、大学之大</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/UjwiyLGdu94" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>四、火的洗礼</iframe>
+			</span>
+			<span class="items">
+				<iframe width="400" height="315" src="https://www.youtube.com/embed/yK4pXaP1ot4" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>五、嘉荫长留</iframe>
+			</span>
+	</div>
+</body>
+</html>
+
