@@ -10,10 +10,17 @@
 	
 	<!--引入外部CSS档案-->
 	<link rel="stylesheet" href="style.css" />
-	<script>
-	windows.onload=function(){
-		var box=document.getElementById("box");
-		box.scrollTop=0;box.scrollLeft=0;
+	<script type="text/javascript">
+	function getData(pageName){
+		//Ajax:XMLHttpRequest 物件专门用来和伺服器做连线
+		var req=new XMLHttpRequest();
+		req.open("get", "https://caih1943.github.io/"+pageName);
+		req.onload=function(){    //load 事件，侦测连线的状态结束
+			//连线完成，做连线的处理
+			var content1=document.getElementById("content1");
+			content1.innerHTML=this.responseText;
+		};
+		req.send(); // 送出连线
 	}
 	</script>
 </head>
@@ -155,59 +162,20 @@
 	</div>
 		
 	<br/>	
-	<h3>我的学习视频</h3>
+	
+	<h3>通过鼠标Click下面题目来选择视频</h3>
 	<div class="content">
-		<ul class="items">
-			<a href="https://www.google.com/search?q=The+10+Days+of+JavaScript+Day&sxsrf=ALeKk00Ml0Cv9MLMj_bmLFspd3o3fyKiyQ:1628977987717&source=lnms&tbm=vid&sa=X&ved=2ahUKEwjyxrfyv7HyAhWHmeAKHR9aCpcQ_AUoAnoECAEQBA&biw=1539&bih=829/" target="_blank">10天Javascript 课程:</a><br/>
-				Day0.Intro;	  Day1.Getting Started(Values;	  Day2.Function;   Day3.Object;   Day4.Arrays;<br/>
-				Day5.Making Decision;   Day6.Higher-Orde Function;   Day7.Returning vs Mutatings;<br/>
-				Day8.Scope& Context; Day9.Misc.Must Know Info; Day10.Web Browser ML-practice</a>
-		</ul>
-			<span class="items">
-				<iframe width="400" height="315" src="https://www.youtube.com/embed/WPcW83BMT3Y" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe width="400" height="315" src="https://www.youtube.com/embed/AzxiDWeFeps" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-				<iframe width="560" height="315" src="https://www.youtube.com/embed/HQuJzGU7TWg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-			</span>	
-	</div>				
-	<h3>蔡邦华院士诞辰110周年纪念视频</h3>
-			<div class="content">
-				<span class="items">
-					<video src="caibh110_1.mp4" controls width="400">浏览器无法载入</video>
-				</span>
-				<span class="items">
-					<video src="caibh110_2.mp4" controls width="400">浏览器无法载入</video>
-				</span>
-				<span class="items">
-					<video src="caibh110_3.mp4" controls width="400">浏览器无法载入</video>
-				</span>
-				<span class="items">
-						<video src="caibanghua110_3.mp4" controls width="400">浏览器无法载入</video>
-					</span>
-			</div>
-			
-	<h3>我的旅游视频</h3>
-	<div class="content">
-			<span class="items">
-				<video src="旅游记/kunming.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<video src="旅游记/iceland.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<video src="旅游记/youlun.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<video src="旅游记/norway.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-			<span class="items">
-				<video src="旅游记/wus.mp4" controls width="400">浏览器无法载入</video>
-			</span>
-	<br/>	
-
-	<h3>和我联络</h3>
-	<div class="content1">
-		填写信息<input type="text" /> <button id="btn" >送出</button>
-	</div>	
+		<span onclick="getData('cai110.htm');">蔡邦华院士诞辰110周年纪念视频</span>
+		</br>
+	</hr>
+		<span onclick="getData('travel.htm');">我的旅游视频</span>	
+	</br>
+</hr>
+	<span onclick="getData('learning.htm');">我的学习视频</span>	
+</br>
+<hr/>
+	<div id="content1"></div>
+	
 </div>
 <footer>该网站共二页，请按<a href="laocaiHome.html" class="button">Next</a>按钮转第二页。</footer>
 </body>
