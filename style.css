@@ -88,7 +88,16 @@ div.box{
 	backgroud-color：#f44336 /*red */
 	border: none; color:white; padding；15px 32px;
 	text-align:center; display:inline-block;font-size:16px;
-	cursor:pointer;
+	cursor:pointer;box-shadow:0 8px 16px 0 rgba(0,0,0,2),  0 6px  20px 0 rgba(0,0,0,0.19);
+}
+.dialog{
+	position:fixed; top:100px;left:50%；transform(-100px,0px);width:200px;
+	padding:10px;border:1px solid #888888;
+	background-color:#eeeeee; box-shadow:0px 0px 10px #000000;
+	display:none;
+}
+.dialog>.close{
+	position:absolute;top:2px;right:2px;cursor:pointer;
 }
 footer{
 	padding:5px;font-size:16px;text-decoration:none;
@@ -97,7 +106,7 @@ footer{
 }
 <!--id 选择器。-->
 #btn{
-	border:1px solid #888888;
+	border:1px solid #888888;cursor:pointer;
 	background-color:#4CAF50;padding:5px;;margin-left:auto;margin-right:auto;
 }
 <!--虚拟选择器：搭配其他选择器使用。-->
