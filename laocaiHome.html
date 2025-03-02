@@ -1,818 +1,761 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-CN">
 <head>
-	<meta charset="utf-8">
-	<meta name="viewpoint" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
-	<title>老蔡网页2</title>
-	<!--网页标题左侧显示-->
-	<link rel="icon" href="C.ico" type="image/x-icon">
-	<!--收藏夹显示图标-->
-	<link rel="shortcut icon" href="C.ico" type="image/x-icon">
-	<link href="style.css" rel="stylesheet"</link>
-    </meta>
-	<style type="text/css">
-		.dialog{
-			position:fixed;top:100px;left:50%;width:100px;transform:(-100px,0px);
-			padding:10px;border:1px solid #888888;
-			background-color:#eeeeee;box-shadow:0px 0px 10px #000000;
-			display:none;
-		}
-		.dialog>.close{
-			position:absolute;top:2px;right:2px;cursor:pointer;
-		}
-		</style>
-		<script>
-			var dialog;
-			window.onload=function(){
-				dialog=document.getElementById("dialog");
-			};
-			function showDialog(){
-				dialog.style.display="block";
-			}
-			function closeDialog(){
-				dialog.style.display="none";
-			}
-			</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>老蔡网页2</title>
+    <link rel="icon" href="C.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="C.ico" type="image/x-icon">
+    <link href="style.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+            color: #333;
+        }
+        h1 {
+            color: #f5f5f5;
+            text-align: center;						
+        }
+				h2, h3{           
+            color: ##3498db;
+            text-align: center;						
+        };				
+    
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: #fff;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        th, td {
+            padding: 12px;
+            text-align: center;
+        }
+        th {
+            background: #3498db;
+            color: #fff;
+        }
+        tr:nth-child(even) {
+            background: #f9f9f9;
+        }
+        a {
+            color: #2980b9;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        a:hover {
+            color: #e74c3c;
+        }
+        .button {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #3498db;
+            color: #fff;
+            border-radius: 5px;
+            text-align: center;
+        }
+        .button:hover {
+            background: #2980b9;
+        }
+        .dialog {
+            position: fixed;
+            top: 100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            padding: 20px;
+            border: 1px solid #888;
+            background: #fff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.3);
+            display: none;
+            border-radius: 8px;
+        }
+        .dialog .close {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            cursor: pointer;
+            font-weight: bold;
+            color: #e74c3c;
+        }
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            color: #7f8c8d;
+        }
+    </style>
+    <script>
+        let dialog;
+        window.onload = function() {
+            dialog = document.getElementById("dialog");
+        };
+        function showDialog() {
+            dialog.style.display = "block";
+        }
+        function closeDialog() {
+            dialog.style.display = "none";
+        }
+    </script>
 </head>
 <body>
-	<h1>老蔡的网页！
-		<a href="index.html" class="button">Back</a>
-	</h1>
-	<main>
-		<div class="box">
-			<ul class="items"> 
-			<table style="width:100%">
-			
-				<nav style="display:flex";align-items:center;>	
-				<div class="logo"><h2>AI 聊天机器人及应用</h2>		
-				</h2></a>
-				<tr> 
-					<td><a href="https://grok.com/chat/b0431063-f81b-4a84-b961-29ca6d004708" target="_blank"><h3>Grok3</a></td>
-						<td><a href="https://www.futuretools.io/" target="_blank"><h3>Future Tools</a></td>
-					<td><a href="https://twitter.com/TheFryAI/status/1671298885564899330?s=20" target="_blank">Top 20 AI Tools</a></td>
-					<td><a href="https://www.futurepedia.io/" target="_blank">Futurepedia</a></td>
-					<td><a href="https://allthings-ai.com/" target="_blank">All Things AI</h3></a></td> 
-					</tr>
-				</div></nav>			
-				<tr>
-				<td><a href="https://chat.openai.com/" target="_blank">OpenAI ChatGPT</a></td>
-				<td><a href="https://claude.ai/" target="_blank">Claude</a></td>
-				<td><a href="https://copilot.microsoft.com/chats/5bcDrYy6cWH9dceZ47Q9x" target="_blank">Copilot</a></td>
-				<td><a href="https://gemini.google.com/app?hl=en" target="_blank">Gemini2.0</a></td>
-				<td><a href="https://chat.deepseek.com/" target="_blank">DeepSeek</a></td>
-				</tr>
-				<tr>
-				<td><a href="https://www.chatpdf.com/" target="_blank">ChatPDF</a></td>
-				<td><a href="https://ossinsight.io/collections/chat-gpt-apps/" target="_blank">ChatGPT Apps - Ranking</a></td>
-				<td><a href="https://www.notion.so/product/ai" target="_blank">Notion AI</a></td> 
-				<td><a href="https://rows.com/" target="_blank">Excel AI</a></td> 
-				<td><a href="https://github.com/jesselau76/ebook-GPT-translator/blob/main/README-zh.md"  target="_blank">ebook-GPT-translator</a></td>
-				<tr>
-				<td><a href="https://github.com/reworkd/AgentGPT "  target="_blank">AgentGPT</a></td>
-				<td><a href="https://github.com/camenduru/stable-diffusion-webui-colab" target="_blank">stable-diffusion-webui-colab</a></td> 
-			  <td><a href="https://www.youtube.com/watch?v=uzInb5gbl4M&t=3370s" target="_blank">Colab 课程 </a></td>
-				<td><a href="https://chatexcel.com/convert" target="_blank">chatexcel</a></td>
-				<td><a href="https://pdf.ai/" target="_blank">PDFAI</a></td>
-				</tr>
-				<tr>
-				 <td><a href="https://glasp.co/youtube-summary" target="_blank">YouTube Summery</br></a></td>
-				 <td><a href="https://github.com/doggy8088/TampermonkeyUserscripts" target="_blank">ChatGPT 語音輸入介面 (支援中/英/日/韓語言)</a></td>
-				 <td><a href="https://copyleaks.com/" target="_blank">AI content Detector-Copyleak</br></a></td>
-				 <td><a href="https://quillbot.com/" target="_blank">Quill Bot Rephrase</br></a></td>
-				 <td><a href="https://www.tryleap.ai/" target="_blank">leap for image and music</br></a></td>
-				</tr>
-				<tr>
-					<td><a href="http://www.aichunjing.com/soft/1085.html" target="_blank">剪映专业版</a></td> 
-					<td><a href="https://www.kaiber.ai/" target="_blank">kaiber</a></td> 
-					<td><a href="https://www.veed.io/" target="_blank">veed 视频生成软件</a></td>
-					<td><a href="https://www.capcut.com/" target="_blank">CapCut Video Editing</a></td>
-				</tr>
-				<tr>
-					<td><a href="https://huggingface.co/spaces/hamtech/dalle-mini" target="_blank">OpenAI DALL-mini Models 文字生成图形</a></td> 
-					<td><a href="https://beta.openai.com/playground" target="_blank">OpenAI Text Models</a></td>
-					<td><a href="Https://huggingface.co/chat/" target="_blank">hugging chat</a></td>
-					<td><a href="https://www.reddit.com/r/ChatGPT/comments/12diapw/gpt4_week_3_chatbots_are_yesterdays_news_ai/?rdt=42534" target="_blank">reddit/ChatGPT</a></td>
-				<tr>
-					<td><a href="https://open.ai/images" target="_blank">OpenAI_Images</a></td> 
-					<td><a href="https://www.copy.ai/?via=start" target="_blank">Copy.AI</a></td>
-					<td><a href="https://voice.ai/" target="_blank">VoiceAI</a></td>
-					<td><a href="https://www.perplexity.ai/" target="_blank">perplexity.ai</a></td>
-				</tr>
-				<tr>
-					<td><a href="https://audiopen.ai/" target="_blank">audiopen</a></td> 
-					<td><a href="https://chatmindai.ucaiji.com/#/chat/1002" target="_blank">Chatmind.AI(cn) free 3/day GPT3.5 Turbo</a></td>
-					<td><a href="https://chat.forefront.ai/" target="_blank">Forefront Chat</a></td>
-					<td><a href="https://poe.com/GPT-4" target="_blank">Poe - AI模型聚合</a></td>
-				</tr>
-				<tr>
-					<td><a href="https://ora.sh/openai/gpt4" target="_blank">Ora - GPT4</a></td>
-					<td><a href="Https://portal.speechmatics.com/"  target="_blank">Speechmatics (speech to text)</a></td>  
-					<td><a href="Https://aistudios.com/"  target="_blank">AIStudios</a></td>
-					<td><a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/playground/models/neva?ncid=so-twit-965307-vt33&=&linkId=100000213830540"  target="_blank">Nvidia 文图生成助手</a></td>
-					</tr>
-				</table>
-				
-				-------------------------------------------------------------------------------
-
-<table style="width:100%">
-	<nav style="display:flex";align-items:center;>	
-		<div class="user"><a href="https://beebom.com/best-chatgpt-chrome-extensions/#Copy.ai"  target="_blank"><h2>18 Best ChatGPT Chrome Extensions You Need to Check Out</h2></a></div>
-</nav>	
-  <tr>
-		<th><a href="https://chrome.google.com/webstore/detail/webchatgpt-chatgpt-with-i/lpfemeioodjbpieminkklglpmhlngfcn" target="_blank">WebChatGPT</a></th>
-    <th><a href="https://chrome.google.com/webstore/detail/chatgpt-for-google/jgjaeacdkonaoafenlfkkkmbaopkbilf" target="_blank">ChatGPT for Google</a></th> 
-    <th><a href="https://chrome.google.com/webstore/detail/compose-ai-ai-powered-wri/ddlbpiadoechcolndfeaonajmngmhblj" target="_blank">Compose AI</a></th>
-  </tr>
-  <tr>
-    <td><a href="https://chrome.google.com/webstore/detail/chatgpt-writer-write-mail/pdnenlnelpdomajfejgapbdpmjkfpjkp" target="_blank">ChatGPT Writer</a></td>
-    <td><a href="https://chrome.google.com/webstore/detail/teamsmart-ai/fmfdbonhjnokbdancdohbanbiiikhlai" target="_blank">TeamSmart AI</a></td> 
-    <td><a href="https://chrome.google.com/webstore/detail/wiseone-%E2%80%93-ai-powered-read/paodpkkacimmkacaecjmhdncjgjepcai" target="_blank">Wiseone</a></td>
-  </tr>
-  <tr>
-    <td><a href="https://chrome.google.com/webstore/detail/superpower-chatgpt/amhmeenmapldpjdedekalnfifgnpfnkc" target="_blank">Superpower ChatGPT</a></td>
-    <td><a href="https://chrome.google.com/webstore/detail/merlin-chatgpt-assistant/camppjleccjaphfdbohjdohecfnoikec/related" target="_blank">Merlin – OpenAI ChatGPT Powered Assistant</a></td> 
-    <td><a href="https://chrome.google.com/webstore/detail/youtube-article-summary-p/nmmicjeknamkfloonkhhcjmomieiodli" target="_blank">YouTube Summary with ChatGPT</a></td>
-  </tr>
-	<tr> 
-		<td><a href="https://chrome.google.com/webstore/detail/tweetgpt/lkjblpoingopdeaofcaapmeoojjjnhnc" target="_blank">tweetGPT</a></td>
-		<td><a href="https://chrome.google.com/webstore/detail/engage-ai-openai-gpt-for/nelhhkchoapcbpcgpmmiahfkcdhgecaf" target="_blank">Engage AI</a></td>
-		<td><a href="https://chrome.google.com/webstore/detail/summarize/lmhkmibdclhibdooglianggbnhcbcjeh" target="_blank">Summarize </a></td> 
-		</tr>
-		<tr> 
-			<td><a href="https://chrome.google.com/webstore/detail/chatgpt-prompt-genius/jjdnakkfjnnbbckhifcfchagnpofjffo/" target="_blank">ChatGPT Prompt Genius</a></td>
-			<td><a href="https://chrome.google.com/webstore/detail/gpt-ez-for-chatgpt/hmmijabfpeeiddcjlckllcogkpcaglhg?utm_source=gptez&utm_medium=link" target="_blank">GPT-EZ</a></td>
-			<td><a href="https://chrome.google.com/webstore/detail/promptheus-converse-with/eipjdkbchadnamipponehljdnflolfki" target="_blank">Promptheus – Converse with ChatGPT</a></td> 
-			</tr>
-			<tr> 
-				<td><a href="https://chrome.google.com/webstore/detail/talk-to-chatgpt/hodadfhfagpiemkeoliaelelfbboamlk" target="_blank">Talk-to-ChatGPT</a></td>
-				<td><a href="https://chrome.google.com/webstore/detail/fancygpt/meonalmakdjaojaoipfhahcfccoecegk" target="_blank">Fancy GPT</a></td>
-				<td><a href="https://chrome.google.com/webstore/detail/sharegpt-share-your-chatg/daiacboceoaocpibfodeljbdfacokfjb?hl=en&authuser=0" target="_blank">ShareGPT: Share your ChatGPT Conversations</a></td> 
-				</tr>
-			<tr> 
-				<td><a href="https://immersivetranslate.com/" target="_blank">沉浸式翻译</a></td>
-				<td><a href="https://github.com/Tampermonkey/tampermonkey" target="_blank">Tampermonkey github</a></td>
-				<td><a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey Extensions</a></td> 
-				</tr>
-		</table>					
-		-------------------------------------------------------------------------------
-
-		<table style="width:100%">
-			<nav style="display:flex";align-items:center;>	
-				<div class="user"><a href="https://beebom.com/best-chatgpt-chrome-extensions/#Copy.ai"  target="_blank"><h2>text-to-speech 文本转语音工具:</h2></a></div>
-		</nav>	
-			<tr>
-				<th><a href="https://azure.microsoft.com/zh-cn/free/cognitive-services/" target="_blank">微软的Text To Speech文本转语音工具</a></th>
-				<th><a href="https://huggingface.co/spaces/suno/bark" target="_blank">BARK1</a></th>
-				<th><a href="https://replicate.com/suno-ai/bark" target="_blank">BARK2</a></th> 				
-			</tr>
-			<tr>
-				<td><a href="https://cloud.google.com/text-to-speech"  target="_blank">Google Cloud Text-to-Speech</a></td>
-				<td><a href="https://peiyin.remeins.com/" target="_blank">记灵配音</a></td>
-				<td><a href="https://notevibes.com/" target="_blank">Notevibes</a></td> 
-			</tr>
-			</table>					
-				</ul>
-		</div>
-		<div class="box">
-				<ul class="items">
-					<table style="width:100%">
-							<tr>
-								<nav style="display:flex">
-									<div class="logo"><h2>Text to Images</h2></div>
-									<div class="menu"><h2>Text to audios</h2></div>
-									<div class="user"><h2>Text to videos</h2></div>
-								</nav>
-							<td><a href="https://comfyuiweb.com/#ai-image-generator"  target="_blank">ComfyUI</a></td>
-							<td><a href="https://openai.com/dall-e-2/"  target="_blank">DALL-E 2</a></td>  
-							<td><a href="https://cloud.google.com/text-to-speech"  target="_blank">Google Cloud Text-to-Speech</a></td>
-							<td><a href="https://lumen5.com/">Lumen5</a></td>
-							</tr>
-							<tr>
-							<td><a href="https://www.midjourney.com/"  target="_blank">Midjourney</a></td>   
-							<td><a href="https://www.ibm.com/cloud/watson-text-to-speech"  target="_blank">IBM Watson Text to Speech</a></td> 
-							<td><a href="https://www.flexclip.com/"  target="_blank">Flexclip</a></td>
-							</tr>
-							<tr> 
-							<td><a href="https://github.com/lucidrains/stable-gan"  target="_blank">Stable Diffusion 2</a></td>
-							<td><a href="https://aws.amazon.com/polly/"  target="_blank">Amazon Polly</a></td>
-							<td><a href="https://www.kapwing.com/"  target="_blank">Kapwing</a></td>
-							</tr>
-							<tr>
-							<td><a href="https://nightcafe.studio/"  target="_blank">Nightcafe</a></td>  
-							<td><a href="https://www.naturalreaders.com/"  target="_blank">NaturalReader</a></td>
-							<td><a href="https://invideo.io/"  target="_blank">InVideo</a></td> 
-							</tr>
-							<tr>
-							<td><a href="https://deepdreamgenerator.com/"  target="_blank">Deep Dream Generator </a></td> 
-							<td><a href="https://speechkit.io/"  target="_blank">SpeechKit</a></td> 
-							<td><a href="https://www.animaker.com/"  target="_blank">Animaker</a></td>
-							</tr>
-							<tr>
-							<td><a href="https://stableaudio.com/" target="_blank">stableaudio</a></td> 
-							<td><a href="Https://clipdrop.co/stable-diffusion" target="_blank"> SDXL</a></td> 
-							<td><a href="https://ttsmaker.com/zh-cn"  target="_blank">ttsmaker</a></td> 
-							<td><a href="Https://aistudios.com/"  target="_blank">AIStudios</a></td>
-							</tr>							
-							</table>
-							--------------------------------------------------------------------------------------------------------
+    <h1>老蔡的网页</h1>
+    <main>
+        <section>
+            <h2>AI 聊天机器人及应用</h2>      
 							<table style="width:100%">
-							<tr>
-							<nav style="display:flex";align-items:center;>	
-									<div class="logo"><a href="https://startuptalky.com/best-text-to-image-generator"  target="_blank"><h2>10 Best AI Text-To-Image Generators in 2023</h2></a></div>
-							</nav>						
-								<td><a href="https://photosonic.writesonic.com/" target="_blank">Photosonic（3.4/5 15 free/m）</a></td>
-								<td><a href="https://www.jasper.ai/" target="_blank">Jasper.ai_Art（4.5/5 Free Trail)</a></td>
-								<td><a href="https://openai.com/product/dall-e-2" target="_blank">Dall-E2（4.2/5）</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://www.fotor.com/" target="_blank">Fotor（4.4/5）</a></td> 
-								<td><a href="https://www.midjourney.com/home/?callbackUrl=%2Fapp%2F" target="_blank">Midjourney（4.7/5）</a></td>
-								<td><a href="https://nightcafe.studio/" target="_blank">Nightcafe(5/5 Free)</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://www.canva.com/" target="_blank">Canva(4.7/5)</a></td>
-								<td><a href="https://stablediffusionweb.com/"  target="_blank">Stable_Diffusion(4.6/5)</a></td>
-								<td><a href="https://dreamstudio.com/start/" target="_blank">Dreamstudio(4.5/5）</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://starryai.com/" target="_blank">StarryAI（4.4/5 Free）</a></td> 
-								<td><a href="https://www.bing.com/images/create/"  target="_blank">Bing AI 必应生图</a></td>
-								<td><a href="https://playgroundai.com/" target="_blank">Playground AI </a></td>
-							</tr>
-							<tr>
-								<td><a href="Https://clipdrop.co/stable-diffusion" target="_blank"> SDXL</a></td> 
-								<td><a href="https://app.leonardo.ai/" target="_blank">leonardo.ai</a></td> 
-								<td><a href="https://firefly.adobe.com/" target="_blank">firefly.adobe</a></td>
-								<td><a href="https://huggingface.co/spaces/gligen/demo" target="_blank">GLIGen 文字生成图形</a></td>
-							</tr>
-							<tr>
-								<td><a href="Https://lexica.art/" target="_blank">Lexica</a></td> 
-								<td><a href="https://www.artbreeder.com/" target="_blank">Artbreeder</a></td> 
-								<td><a href="https://dream.ai/create" target="_blank">Wombo Dream(Free)</a></td>
-								<td><a href="https://deepai.org/machine-learning-model/text2img" target="_blank">DeepAI 文字生成图形</a></td>
-							</tr>
-							</table>	
-							-------------------------------------------------------------------------------------------------------
-							<table style="width:100%">
-							<tr>
-							<nav style="display:flex";align-items:center;>	
-									<div class="menu"><h2>最好的老照片修复软件及其他</h2></div>
-							</nav>						
-								<td><a href="https://www.adobe.com/ca/products/photoshop.html" target="_blank">Photoshop AI</a></td>
-								<td><a href="https://skylum.com/luminar-neo" target="_blank">Luminar Neo</a></td>
-								<td><a href="https://photoworks.io/" target="_blank">PhotoWorks</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://www.softorbits.net/photo-retoucher/" target="_blank">SoftOrbits Photo Retoucher</a></td> 
-								<td><a href="https://www.colorpilot.com/retouch.html" target="_blank">Retouch Pilot></td>
-								<td><a href="https://huggingface.co/spaces/sczhou/CodeFormer" target="_blank">CodeFormer 修復臉部和眼睛</a></td></tr>
-								<tr>
-								<td><a href="https://www.upscale.media/" target="_blank">Upscale 模糊照片修复AI工具</a></td> 
-								<td><a href="https://imglarger.com/" target="_blank">imglarger照片放大增强工具></td>
-								<td><a href="https://bigjpg.com/" target="_blank">bigjpgAI人工智能圖片放大</a></td>
-							</tr>
-								<tr>
-								<td><a href="https://www.pixelcut.ai/" target="_blank">pixelcut用AI生成 photos 10x faster </a></td> 
-								<td><a href="https://tinywow.com/image/upscale" target="_blank">Upscale an Image></td>
-								<td><a href="https://clipdrop.co/image-upscaler" target="_blank">IMAGE UPSCALER 图像放大器</a></td>
-								<td><a href="https://www.upscayl.org/" target="_blank">用AI Supercharging your images</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://www.strmr.com/examples" target="_blank">Astria AI 自動摳圖/移花接木到別的圖片</a></td>
-								<td><a href="https://photoai.io/?free_hash=42572a2903f24da850bcd31154e47714" target="_blank">PhotoAI Copycat a photo</a></td>
-								<td><a href="https://www.freedidi.com/5576.html" target="_blank">AI换脸、图片去背、人声分离等</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://vidbgrem.media.io/app/" target="_blank">视频去背换色、图片去背</a></td> 
-								<td><a href="https://cleanupphotos.com/" target="_blank">移去不需要的物件、图片去背</a></td>
-								<td><a href="<>< href="https://jpghd.com/en" target="_blank">老照片修复（收费)</a></td>
-							</tr>
-							<tr>
-								<td><a href="https://bittly.cc/0iYMw" target="_blank">Style2paints - 最强的线描图画上色工具</a></td> 
-								<td><a href="https://clipdrop.co/relight" target="_blank">Clipdrop AI 智能打光！再也不用買攝影燈！</a></td>
-								<td><a href="https://crop-circle.imageonline.co/" target="_blank">ONLINE Crop Circle Image</a></td>								
-							</tr>
-							<tr>
-								<td><a href="https://www.memuplay.com/how-to-use-com.lensa.app-on-pc.html" target="_blank">lensa</a></td> 
-								<td><a href="https://github.com/sczhou/CodeFormer" target="_blank">CodeFormer AI 智能修復臉部神器！on github</a></td>
-								<td><a href="https://www.canva.com/features/change-background-color-of-image/" target="_blank">Change the background color !</a></td>
-							</tr>
-							</table>	
-			</ul>
-		</div>
-		<div class="box">		
-				<ul class="items">
-					<nav style="display:flex";align-items:center;>	
-						<div class="user"><h2>我的音乐链接</h2></div>
-				</nav>
-				<table style="width:100%">
-							<tr>
-							<td><a href="https://www.youtube.com/watch?v=pYYTdtRrg8M" target="_blank">Johann Strauss Sr. "Radetzky March" </a></td>  
-							<td><a href="https://www.youtube.com/watch?v=vmr34RXu_aM" target="_blank">Andre' Rieu - Tristesse Violin - Chopin Etude Op.10 No3</a></td>
-							<td><a href="https://www.youtube.com/watch?v=Nzo3atXtm54"target="_blank" >Johannes Brahms -- Hungarian Dance No.5</a></td>
-							</tr>
-							<tr>
-							<td><a href="https://www.youtube.com/watch?v=nSIjIb_pj4E"target="_blank" >探戈演奏曲</a></td>   
-							<td><a href="https://www.youtube.com/watch?v=79ro3UeDhhg"target="_blank" >柴可夫斯基. 莫札特. 貝多芬 - Happy Classical Music</a></td> 
-							<td><a href="https://www.youtube.com/watch?v=ydKwY0tqAXQ"target="_blank" >Beethoven ~ Sonata Claro de Luna + 300 Pinturas</a></td>
-							</tr>
-							<tr> 
-							<td><a href="https://www.youtube.com/watch?v=erXCJ_HSaS4" target="_blank">梁祝小提琴</a></td>
-							<td><a href="https://www.youtube.com/watch?v=JYNjTlMMPyI"target="_blank" >优美的轻音乐19首珍藏版</a></td>
-							<td><a href="https://www.youtube.com/watch?v=mQTIzdnox2M"target="_blank" >古典音乐 15首 纯音乐 Bandari</a></td>
-							</tr>
-							<tr>
-							<td><a href="https://www.youtube.com/watch?v=90brkM2iKK0"target="_blank" >輕鬆浪漫古典華爾滋合集</a></td>  
-							<td><a href="https://www.youtube.com/watch?v=c57aFp4LAO4" target="_blank">蓝色多瑙河</a></td>
-							<td><a href="https://www.youtube.com/watch?v=zzfTW6HbrvU" target="_blank">皇帝圓舞曲</a></td> 
-							</tr>
-							<tr>
-							<td><a href="https://www.youtube.com/watch?v=aOcWrhCd4M8" target="_blank">春之声圓舞曲</a></td> 
-							<td><a href="https://www.youtube.com/watch?v=x9DRhnesMko" target="_blank">孟德爾頌 - 交響曲第4號A大調「義大利」作品Mendelssohn Symphony no 4</a></td> 
-							<td><a href="https://www.youtube.com/watch?v=IPpViVAl360&ab_channel=PlayRelaxingChinese"  target="_blank">50首 薩克斯風 輕音樂 放鬆解壓</a></td>
-							</tr>
-							</table>	
-							------------------------------------------------------------------------------------------------------
-							<table style="width:100%">
-								<tr>
-								<nav style="display:flex";align-items:left;>	
-								<div class="logo"><h2>实用网页链接：Font, Icon and Translation</h2></div></nav>		
-								<tr>
-								 <td><a href="Https://fontawesome.com" target="_blank">the Internet's icon library</br></a></td>
-								 <td><a href="https://fonts.google.com" target="_blank">Google Fonts</a></td>
-								 <td><a href="https://fontawesome.com/" target="_blank">Font Awesome 6.1.1</br></a></td>
-								 <td><a href="https://www.googlefonts.cn/chinese" target="_blank">Google Font Chinese</br></a></td>
-								</tr>
-								<tr>
-									<td><a href="https://fonts.google.com/noto/specimen/Noto+Sans+SC" target="_blank">Noto Sans Simplified Chinese</a></td> 
-									<td><a href="https://ionic.io/ionicons" target="_blank">ionicons 5.5.2</a></td> 
-									<td><a href="https://github.com/copytranslator/CopyTranslator/" target="_blank">CopyTranslator</a></td>
-									<td><a href="https://www.deepl.com/translator" target="_blank">DeepL Translator</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://www.ooopn.com/" target="_blank">盒子学术</a></td>
-									<td><a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">LIGHTBOX</a></td> 
-									<td><a href="ttp://code.ciaoca.com/jquery/lightbox/" target="_blank">jQuery lightBox 灯箱效果</a></td>
-									<td><a href="https://colorpicker.me/#c5b824" target="_blank">online color Picker</a></td>
-									<td><a href="https://www.google.com/search?client=aff-ime&sxsrf=AOaemvJ9rk5uEuCgu8CVBrKGRzOLaIiVMQ:1639934488396&q=Color+picker&si=AHuW2sRgwxu5mSGMeMv1y53CRkBWsKqVpLbMXgAKNip6jW0j_lKTyBPL22KrMV827mQXonTquHJtAgtKF36aQDwGfufFJHTzvV3faOBikWW7PJzFGWT1CgBQjF5twHQfX08DY-OsQb-1HLEl9NekCOPc17_Jwz6WW880az4KKsc1uvW2Oxt4KPE%3D&sa=X&ved=2ahUKEwiPwoqFsPD0AhXElIkEHTLqBkYQ6RN6BAgjEAE&biw=1246&bih=960&dpr=1" target="_blank">Color tool</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5/" target="_blank">wikiHow</a></td> 
-									<td><a href="https://www.timeanddate.com/" target="_blank">timeanddate</a></td> 
-									<td><a href="http://www.pptkj.net/" target="_blank">PPT 课件</a></td>
-									<td><a href="https://www.freedidi.com/5538.html" target="_blank">Chrome 浏览器上最值得推荐的8款插件</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://bittly.cc/OZHFr" target="_blank">AI 写作，支持 N/A/I卡 GPU 加速 </a></td> 
-									<td><a href="https://www.scalenut.com/" target="_blank">Scalenut</a></td> 
-									<td><a href="https://www.sitekick.com/" target="_blank">Sitekick</a></td>
-									<td><a href="https://caniuse.com" target="_blank">Can I Use</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://www.pexels.com/zh-cn/" target="_blank">pexels free images</a></td> 
-									<td><a href="https://unsplash.com/s/photos/pexels" target="_blank">pexels</a></td> 
-									<td><a href="https://www.bing.com/images/search?q=pexels+free+images&qpvt=pexels+free+images&form=IGRE&first=1&tsc=ImageBasicHover" target="_blank">Microfoft Bing pexels free images</a></td>
-									<td><a href="https://caniuse.com" target="_blank">Can I Use</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://www.deepl.com/translator/files" target="_blank">Deepl 文件翻译器</a></td>
-									<td><a href="https://deftpdf.com/translate" target="_blank">Dept 文件翻译器</a></td>
-									<td><a href="https://products.groupdocs.app/translation/total/english-chinese" target="_blank">Group 文件翻译器</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://dubbing.felo.me/" target="_blank">YouTube 视频多语言翻译器</a></td>
-									<td><a href="https://immersivetranslate.com/" target="_blank">沉浸式翻译器</a></td>
-									<td><a href="https://dict.youdao.com/" target="_blank">有道翻译</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://youglish.com/" target="_blank">用 YouTube 改进发音</a></td>
-									<td><a href="https://translate.google.ie/?sl=auto&tl=zh-CN&text=immersive%20translate&op=translate" target="_blank">多语言多类别Google翻译器</a></td>
-									<td><a href="https://play.ht/" target="_blank">具有逼真文字转语音功能的AI语音生成器</a></td>
-								</tr>
-								<tr>
-									<td><a href="https://box123.io/" target="_blank">盒子123</a></td>
-									<td><a href="https://xiaolincoding.com/" target="_blank">图解系列</a></td>
-									<td><a href="https://textfx.withgoogle.com/" target="_blank">TextFX-10 Google Tools</a></td>
-								</tr>
-								</table>							
-				</ul>
-		</div>
-	</main>
-
-	<main>
-		<div class="box">
-			<ul class="items">
-			<table style="width:100%">
-			<nav style="display:flex";align-items:center;>	
-					<div class="logo"><h2>我的课程链接</h2></div>
-			</nav>
-				<tr>
-						<td><a href="https://github.com/jackfrued/Python-Core-50-Courses" target="_blank">Python-50课程</a></td>  
-						<td><a href="https://www.cloudskillsboost.google/journeys/118" target="_blank">Google AI cloud 课程</a></td>
-						<td><a href="https://www.tutorialspoint.com/index.htm" target="_blank">学习平台</a></td>
-						</tr>
-				<tr>
-						<td><a href="https://training.pada-x.com/online.htm" target="_blank">彭彭课程</a></td>  
-						<td><a href="http://coursera.org" target="_blank">Coursera 课程</a></td>
-						<td><a href="https://www.youtube.com/channel/UCcIXc5mJsHVYTZR1maL5l9w" target="_blank">Deeplearning.ai课程</a></td>
-						</tr>
-						<tr>
-						<td><a href="https://www.youtube.com/playlist?list=PLkDaE6sCZn6HJ1XrZLpKeWQN5XMKhEz_V" target="_blank">AI for Good Specialization by DeepLearning.AI</a></td>   
-						<td><a href="https://www.youtube.com/channel/UC5zx8Owijmv-bbhAK6Z9apg" target="_blank">Artificial Intelligence - All in One</a></td>   
-						<td><a href="https://www.coursera.org/lecture/generative-ai-with-llms/course-introduction-9uWab" target="_blank">Generative AI with Large Language Models</a></td> 
-						<td><a href="https://www.deeplearning.ai/short-courses/" target="_blank">LEARN GENERATIVE AI
-							Short Courses</a></td>
-						</tr>
-						<tr> 
-						<td><a href="https://www.youtube.com/channel/UC9kOupnRoiKdeOJILgQ1CsA" target="_blank">程序员小飞课程</a></td>
-						<td><a href="https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg" target="_blank">Morvan课程</a></td>
-						<td><a href="https://www.youtube.com/channel/UC2ggjtuuWvxrHHHiaDH1dlQ" target="_blank">Hung-yi Lee课程</a></td>
-						<td><a href="https://www.youtube.com/channel/UCGj-3RuJeNdzTsACq8beDRg" target="_blank">C 鱼课程</a></td>
-						</tr>
-						<tr>
-						<td><a href="https://www.youtube.com/channel/UC6F7TKhp26EZOPrQg9hCZaQ" target="_blank">亚斯特拉的索哥课程</a></td>  
-						<td><a href="https://www.youtube.com/watch?v=TjHslMeJ81k&ab_channel=%E8%B5%B0%E6%AD%AA%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%B8%ABJames" target="_blank">Git and GitHub基础课程</a></td>
-						<td><a href="https://www.youtube.com/watch?v=RGOj5yH7evk&ab_channel=freeCodeCamp.org" target="_blank">Git and GitHub for Beginners Crash course</a></td> 
-						<td><a href="https://help.fitbit.com/articles/en_US/Help_article/2437.htm" target="_blank">Fitbit User Manuals</a></td> 
-						</tr>
-						<tr>						
-						<td><a href="https://www.bilibili.com/video/BV1VL4y1q7qX/?spm_id_from=333.788.recommend_more_video.-1&vd_source=614907f3498f61d2f0e2cb0568877286" target="_blank">Google Colab系列视频（一）：Colab 简介，在谷歌云上编写，运行和共享代码</a></td> 
-						<td><a href="hhttps://www.bilibili.com/video/BV1K3411876U/?spm_id_from=autoNext&vd_source=614907f3498f61d2f0e2cb0568877286"  target="_blank">Google Colab系列视频（二）：在Colab中安装GPU版本的TensorFlow及pytorch</a></td>
-						<td><a href="https://www.bilibili.com/video/BV1Qr4y1k7F1/?spm_id_from=autoNext&vd_source=614907f3498f61d2f0e2cb0568877286" target="_blank">Google Colab系列视频（三）：在Colab中加载文件/数据</a></td>
-						</tr>
-						</table>	
-						-------------------------------------------------------------------------------------------------------
-						<table style="width:100%">
-							<tr>
-							<nav style="display:flex";align-items:left;>	
-							<div class="logo"><h2>实用网页链接：有关信息</h2></div></nav>		
-							<tr>
-							 <td><a href="Https://caihengsheng.github.io/" target="_blank">老蔡网站</br></a></td>
-							 <td><a href="Https://caih1943.github.io/" target="_blank">老蔡网页</a></td>
-							 <td><a href="Https://www.youtube.com/" target="_blank">我的 Youtube</br></a></td>
-							 <td><a href="Https://twitter.com/home/" target="_blank">我的 Twitter</br></a></td>
-							</tr>
-							<tr>
-								<td><a href="Https://my.yahoo.com/" target="_blank">我的 Yahoo</a></td> 
-								<td><a href="Https://caihengsheng.wordpress.com/" target="_blank">我的 wordpress</a></td> 
-								<td><a href="Https://mail.protonmail.com/inbox" target="_blank">我的 protoMail</a></td>
-								<td><a href="Http://caih2005.blogspot.com/" target="_blank">我的大学照片</a></td>
-							</tr>
-							<tr>
-								<td><a href="Https://pan.baidu.com/disk/timeline#/timeline" target="_blank">百度网盘照片</a></td> 
-								<td><a href="Https://onedrive.live.com/?v=photos&id=root&cid=aef3890df59b89ff&qt=allmyphotos" target="_blank">ONE Driver 照片</a></td>
-								<td><a href="Https://photos.google.com/?pli=1" target="_blank">Google Photos</a></td>
-								<td><a href="Https://www.raidrive.com/" target="_blank">raidrive</a></td>
-							</tr>
-							</table>
-				
-							-------------------------------------------------------------------------------
-					
-				
-							<table style="width:100%">
-								<tr>
 								<nav style="display:flex";align-items:center;>	
-									<div class="menu"><h2>实用网页链接：图书馆信息</h2></a></div>
-								</nav>	
-								<td><a href="https://hollis.harvard.edu/" target="_blank">哈佛大学HOLLIS</a></td>
-								<td><a href="https://ndlonline.ndl.go.jp" target="_blank">日本国会图书馆</a></td>
-								<td><a href="https://Ottawa.overdrive.com/" target="_blank">渥太华图书馆</a></td>
-								<td><a href="https://libweb.zju.edu.cn/" target="_blank">浙江大学图书馆</a></td>
-								</tr>
-								<tr>
-								<td><a href="https://cadal.edu.cn/index/home" target="_blank">cadal大学数字图书馆国际合作计划</a></td>
-								<td><a href="https://www.oalib.com/" target="_blank">Oalib论文搜索</a></td>
-								<td><a href="https://ir.library.osaka-u.ac.jp/repo/ouka/all/?lang=0" target="_blank">大阪大学科学信息库</a></td> 
-								<td><a href="http://www.nssd.cn/" target="_blank">国家哲学社会科学学术期刊数据库</a></td>
-								<tr>
-								<td><a href="https://www.ahhhhfs.com/" target="_blank">ahhhhfs搜索</a></td>
-								<td><a href="https://www.csdn.net/" target="_blank">CSDN</a></td> 
-								<td><a href="http://zhishifenzi.com/depth/" target="_blank">知识分子</a></td>
-								<td><a href="https://www.fosshub.com/" target="_blank">纯净软件下载网</a></td>
-								</tr>
-							</table>
-				<ul>
-		</div>	
+										<div class="user"><a href="https://beebom.com/best-chatgpt-chrome-extensions/#Copy.ai"  target="_blank"><h2>AI 聊天机器人 Top 20 AI Tools</h2></a></div>
+								</nav>			
+									<tr>
+																	<td><a href="https://chat.openai.com/" target="_blank">OpenAI ChatGPT</a></td>
+																	<td><a href="https://claude.ai/" target="_blank">Claude</a></td>
+																	<td><a href="https://copilot.microsoft.com/chats/5bcDrYy6cWH9dceZ47Q9x" target="_blank">Copilot</a></td>
+																	<td><a href="https://gemini.google.com/app?hl=en" target="_blank">Gemini 2.0</a></td>
+																	<td><a href="https://chat.deepseek.com/" target="_blank">DeepSeek</a></td>
+															</tr>
+															<tr>
+																<td><a href="https://www.chatpdf.com/" target="_blank">ChatPDF</a></td>
+																<td><a href="https://ossinsight.io/collections/chat-gpt-apps/" target="_blank">ChatGPT Apps - Ranking</a></td>
+																<td><a href="https://www.notion.so/product/ai" target="_blank">Notion AI</a></td> 
+																<td><a href="https://rows.com/" target="_blank">Excel AI</a></td> 
+																<td><a href="https://github.com/jesselau76/ebook-GPT-translator/blob/main/README-zh.md"  target="_blank">ebook-GPT-translator</a></td>
+																<tr>
+																<td><a href="https://github.com/reworkd/AgentGPT "  target="_blank">AgentGPT</a></td>
+																<td><a href="https://github.com/camenduru/stable-diffusion-webui-colab" target="_blank">stable-diffusion-webui-colab</a></td> 
+															<td><a href="https://www.youtube.com/watch?v=uzInb5gbl4M&t=3370s" target="_blank">Colab 课程 </a></td>
+																<td><a href="https://chatexcel.com/convert" target="_blank">chatexcel</a></td>
+																<td><a href="https://pdf.ai/" target="_blank">PDFAI</a></td>
+																</tr>
+																<tr>
+																 <td><a href="https://glasp.co/youtube-summary" target="_blank">YouTube Summery</br></a></td>
+																 <td><a href="https://github.com/doggy8088/TampermonkeyUserscripts" target="_blank">ChatGPT 語音輸入介面 (支援中/英/日/韓語言)</a></td>
+																 <td><a href="https://copyleaks.com/" target="_blank">AI content Detector-Copyleak</br></a></td>
+																 <td><a href="https://quillbot.com/" target="_blank">Quill Bot Rephrase</br></a></td>
+																 <td><a href="https://www.tryleap.ai/" target="_blank">leap for image and music</br></a></td>
+																</tr>
+																<tr>
+																		<td><a href="http://www.aichunjing.com/soft/1085.html" target="_blank">剪映专业版</a></td> 
+																		<td><a href="https://www.kaiber.ai/" target="_blank">kaiber</a></td> 
+																		<td><a href="https://www.veed.io/" target="_blank">veed 视频生成软件</a></td>
+																		<td><a href="https://www.capcut.com/" target="_blank">CapCut Video Editing</a></td>
+																</tr>
+																<tr>
+																		<td><a href="https://huggingface.co/spaces/hamtech/dalle-mini" target="_blank">OpenAI DALL-mini Models 文字生成图形</a></td> 
+																		<td><a href="https://beta.openai.com/playground" target="_blank">OpenAI Text Models</a></td>
+																		<td><a href="Https://huggingface.co/chat/" target="_blank">hugging chat</a></td>
+																		<td><a href="https://www.reddit.com/r/ChatGPT/comments/12diapw/gpt4_week_3_chatbots_are_yesterdays_news_ai/?rdt=42534" target="_blank">reddit/ChatGPT</a></td>
+																<tr>
+																		<td><a href="https://open.ai/images" target="_blank">OpenAI_Images</a></td> 
+																		<td><a href="https://www.copy.ai/?via=start" target="_blank">Copy.AI</a></td>
+																		<td><a href="https://voice.ai/" target="_blank">VoiceAI</a></td>
+																		<td><a href="https://www.perplexity.ai/" target="_blank">perplexity.ai</a></td>
+																</tr>
+																<tr>
+																		<td><a href="https://audiopen.ai/" target="_blank">audiopen</a></td> 
+																		<td><a href="https://chatmindai.ucaiji.com/#/chat/1002" target="_blank">Chatmind.AI(cn) free 3/day GPT3.5 Turbo</a></td>
+																		<td><a href="https://chat.forefront.ai/" target="_blank">Forefront Chat</a></td>
+																		<td><a href="https://poe.com/GPT-4" target="_blank">Poe - AI模型聚合</a></td>
+																</tr>
+																<tr>
+																		<td><a href="https://ora.sh/openai/gpt4" target="_blank">Ora - GPT4</a></td>
+																		<td><a href="Https://portal.speechmatics.com/"  target="_blank">Speechmatics (speech to text)</a></td>  
+																		<td><a href="Https://aistudios.com/"  target="_blank">AIStudios</a></td>
+																		<td><a href="https://catalog.ngc.nvidia.com/orgs/nvidia/teams/playground/models/neva?ncid=so-twit-965307-vt33&=&linkId=100000213830540"  target="_blank">Nvidia 文图生成助手</a></td>
+																		</tr>
+																</table>
+																
+																-------------------------------------------------------------------------------
+										
+										<table style="width:100%">
+											<nav style="display:flex";align-items:center;>	
+												<div class="user"><a href="https://beebom.com/best-chatgpt-chrome-extensions/#Copy.ai"  target="_blank"><h2>18 Best ChatGPT Chrome Extensions You Need to Check Out</h2></a></div>										
+										</nav>
+											<tr>
+												<td><a href="https://chrome.google.com/webstore/detail/chatgpt-writer-write-mail/pdnenlnelpdomajfejgapbdpmjkfpjkp" target="_blank">ChatGPT Writer</a></td>
+												<td><a href="https://chrome.google.com/webstore/detail/teamsmart-ai/fmfdbonhjnokbdancdohbanbiiikhlai" target="_blank">TeamSmart AI</a></td> 
+												<td><a href="https://chrome.google.com/webstore/detail/wiseone-%E2%80%93-ai-powered-read/paodpkkacimmkacaecjmhdncjgjepcai" target="_blank">Wiseone</a></td>
+												<td><a href="https://chrome.google.com/webstore/detail/wiseone-%E2%80%93-ai-powered-read/paodpkkacimmkacaecjmhdncjgjepcai" target="_blank">Wiseone</a></td>
+												<td><a href="https://chrome.google.com/webstore/detail/wiseone-%E2%80%93-ai-powered-read/paodpkkacimmkacaecjmhdncjgjepcai" target="_blank">Wiseone</a></td>
+											</tr>
+											<tr>
+												<td><a href="https://chrome.google.com/webstore/detail/superpower-chatgpt/amhmeenmapldpjdedekalnfifgnpfnkc" target="_blank">Superpower ChatGPT</a></td>
+												<td><a href="https://chrome.google.com/webstore/detail/merlin-chatgpt-assistant/camppjleccjaphfdbohjdohecfnoikec/related" target="_blank">Merlin – OpenAI ChatGPT Powered Assistant</a></td> 
+												<td><a href="https://chrome.google.com/webstore/detail/youtube-article-summary-p/nmmicjeknamkfloonkhhcjmomieiodli" target="_blank">YouTube Summary with ChatGPT</a></td>
+											</tr>
+												<tr> 
+														<td><a href="https://chrome.google.com/webstore/detail/tweetgpt/lkjblpoingopdeaofcaapmeoojjjnhnc" target="_blank">tweetGPT</a></td>
+														<td><a href="https://chrome.google.com/webstore/detail/engage-ai-openai-gpt-for/nelhhkchoapcbpcgpmmiahfkcdhgecaf" target="_blank">Engage AI</a></td>
+														<td><a href="https://chrome.google.com/webstore/detail/summarize/lmhkmibdclhibdooglianggbnhcbcjeh" target="_blank">Summarize </a></td> 
+														</tr>
+														<tr> 
+																<td><a href="https://chrome.google.com/webstore/detail/chatgpt-prompt-genius/jjdnakkfjnnbbckhifcfchagnpofjffo/" target="_blank">ChatGPT Prompt Genius</a></td>
+																<td><a href="https://chrome.google.com/webstore/detail/gpt-ez-for-chatgpt/hmmijabfpeeiddcjlckllcogkpcaglhg?utm_source=gptez&utm_medium=link" target="_blank">GPT-EZ</a></td>
+																<td><a href="https://chrome.google.com/webstore/detail/promptheus-converse-with/eipjdkbchadnamipponehljdnflolfki" target="_blank">Promptheus – Converse with ChatGPT</a></td> 
+																</tr>
+																<tr> 
+																		<td><a href="https://chrome.google.com/webstore/detail/talk-to-chatgpt/hodadfhfagpiemkeoliaelelfbboamlk" target="_blank">Talk-to-ChatGPT</a></td>
+																		<td><a href="https://chrome.google.com/webstore/detail/fancygpt/meonalmakdjaojaoipfhahcfccoecegk" target="_blank">Fancy GPT</a></td>
+																		<td><a href="https://chrome.google.com/webstore/detail/sharegpt-share-your-chatg/daiacboceoaocpibfodeljbdfacokfjb?hl=en&authuser=0" target="_blank">ShareGPT: Share your ChatGPT Conversations</a></td> 
+																		</tr>
+																<tr> 
+																		<td><a href="https://immersivetranslate.com/" target="_blank">沉浸式翻译</a></td>
+																		<td><a href="https://github.com/Tampermonkey/tampermonkey" target="_blank">Tampermonkey github</a></td>
+																		<td><a href="https://www.tampermonkey.net/" target="_blank">Tampermonkey Extensions</a></td> 
+																		</tr>
+														</table>					
+														-------------------------------------------------------------------------------
+												<table style="width:100%">
+														<nav style="display:flex";align-items:center;>	
+																<div class="user"><a href="https://beebom.com/best-chatgpt-chrome-extensions/#Copy.ai"  target="_blank"><h2>text-to-speech 文本转语音工具:</h2></a></div>
+												</nav>	
+														<td>
+															<a href="https://azure.microsoft.com/zh-cn/free/cognitive-services/" target="_blank">微软的Text To Speech文本转语音工具</a></td>
+																<td><a href="https://huggingface.co/spaces/suno/bark" target="_blank">BARK1</a></td>
+																<td><a href="https://replicate.com/suno-ai/bark" target="_blank">BARK2</a></td>				
+														</tr>
+														<tr>
+																<td><a href="https://cloud.google.com/text-to-speech"  target="_blank">Google Cloud Text-to-Speech</a></td>
+																<td><a href="https://peiyin.remeins.com/" target="_blank">记灵配音</a></td>
+																<td><a href="https://notevibes.com/" target="_blank">Notevibes</a></td> 
+														</tr>
+														</table>					
+																</ul>
+												</div>
+											
+										<main>
+												<div class="box">
+														
+														<ul class="items">																									
+														
+															
+																		<table style="width:100%">
+																						<tr>
+																								<nav style="display:flex">
+																										<div class="logo"><h2>Text to Images</h2></div>
+																										<div class="menu"><h2>Text to audios</h2></div>
+																										<div class="user"><h2>Text to videos</h2></div>
+																								</nav>
+																						<td><a href="https://comfyuiweb.com/#ai-image-generator"  target="_blank">ComfyUI</a></td>
+																						<td><a href="https://openai.com/dall-e-2/"  target="_blank">DALL-E 2</a></td>  
+																						<td><a href="https://cloud.google.com/text-to-speech"  target="_blank">Google Cloud Text-to-Speech</a></td>
+																						<td><a href="https://lumen5.com/">Lumen5</a></td>
+																						</tr>
+																						<tr>
+																						<td><a href="https://www.midjourney.com/"  target="_blank">Midjourney</a></td>   
+																						<td><a href="https://www.ibm.com/cloud/watson-text-to-speech"  target="_blank">IBM Watson Text to Speech</a></td> 
+																						<td><a href="https://www.flexclip.com/"  target="_blank">Flexclip</a></td>
+																						</tr>
+																						<tr> 
+																						<td><a href="https://github.com/lucidrains/stable-gan"  target="_blank">Stable Diffusion 2</a></td>
+																						<td><a href="https://aws.amazon.com/polly/"  target="_blank">Amazon Polly</a></td>
+																						<td><a href="https://www.kapwing.com/"  target="_blank">Kapwing</a></td>
+																						</tr>
+																						<tr>
+																						<td><a href="https://nightcafe.studio/"  target="_blank">Nightcafe</a></td>  
+																						<td><a href="https://www.naturalreaders.com/"  target="_blank">NaturalReader</a></td>
+																						<td><a href="https://invideo.io/"  target="_blank">InVideo</a></td> 
+																						</tr>
+																						<tr>
+																						<td><a href="https://deepdreamgenerator.com/"  target="_blank">Deep Dream Generator </a></td> 
+																						<td><a href="https://speechkit.io/"  target="_blank">SpeechKit</a></td> 
+																						<td><a href="https://www.animaker.com/"  target="_blank">Animaker</a></td>
+																						</tr>
+																						<tr>
+																						<td><a href="https://stableaudio.com/" target="_blank">stableaudio</a></td> 
+																						<td><a href="Https://clipdrop.co/stable-diffusion" target="_blank"> SDXL</a></td> 
+																						<td><a href="https://ttsmaker.com/zh-cn"  target="_blank">ttsmaker</a></td> 
+																						<td><a href="Https://aistudios.com/"  target="_blank">AIStudios</a></td>
+																						</tr>							
+																						</table>
+																						--------------------------------------------------------------------------------------------------------
+																						<table style="width:100%">
+																						<tr>
+																						<nav style="display:flex";align-items:center;>	
+																										<div class="logo"><a href="https://startuptalky.com/best-text-to-image-generator"  target="_blank"><h2>10 Best AI Text-To-Image Generators in 2023</h2></a></div>
+																						</nav>						
+																								<td><a href="https://photosonic.writesonic.com/" target="_blank">Photosonic（3.4/5 15 free/m）</a></td>
+																								<td><a href="https://www.jasper.ai/" target="_blank">Jasper.ai_Art（4.5/5 Free Trail)</a></td>
+																								<td><a href="https://openai.com/product/dall-e-2" target="_blank">Dall-E2（4.2/5）</a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="https://www.fotor.com/" target="_blank">Fotor（4.4/5）</a></td> 
+																								<td><a href="https://www.midjourney.com/home/?callbackUrl=%2Fapp%2F" target="_blank">Midjourney（4.7/5）</a></td>
+																								<td><a href="https://nightcafe.studio/" target="_blank">Nightcafe(5/5 Free)</a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="https://www.canva.com/" target="_blank">Canva(4.7/5)</a></td>
+																								<td><a href="https://stablediffusionweb.com/"  target="_blank">Stable_Diffusion(4.6/5)</a></td>
+																								<td><a href="https://dreamstudio.com/start/" target="_blank">Dreamstudio(4.5/5）</a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="https://starryai.com/" target="_blank">StarryAI（4.4/5 Free）</a></td> 
+																								<td><a href="https://www.bing.com/images/create/"  target="_blank">Bing AI 必应生图</a></td>
+																								<td><a href="https://playgroundai.com/" target="_blank">Playground AI </a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="Https://clipdrop.co/stable-diffusion" target="_blank"> SDXL</a></td> 
+																								<td><a href="https://app.leonardo.ai/" target="_blank">leonardo.ai</a></td> 
+																								<td><a href="https://firefly.adobe.com/" target="_blank">firefly.adobe</a></td>
+																								<td><a href="https://huggingface.co/spaces/gligen/demo" target="_blank">GLIGen 文字生成图形</a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="Https://lexica.art/" target="_blank">Lexica</a></td> 
+																								<td><a href="https://www.artbreeder.com/" target="_blank">Artbreeder</a></td> 
+																								<td><a href="https://dream.ai/create" target="_blank">Wombo Dream(Free)</a></td>
+																								<td><a href="https://deepai.org/machine-learning-model/text2img" target="_blank">DeepAI 文字生成图形</a></td>
+																						</tr>
+																						</table>	
+																						-------------------------------------------------------------------------------------------------------
 
-		<div class="box">
-				<ul class="items">
-					<table style="width:100%">
-					<tr>
-					<nav style="display:flex";align-items:left;>	
-					<div class="logo"><h2>实用网页链接1：github</h2></div></nav></tr>		
-					<tr>
-					 <td><a href="https://github.com/caihengsheng/caihengsheng.github.io/" target="_blank">老蔡网站Github</br></a></td>
-					 <td><a href="https://github.com/caih1943/caih1943.github.io/" target="_blank">老蔡网页Github</br></a></td>
-					 <td><a href="https://www.toolify.ai/" target="_blank">5300+ Best AI Companies and Tools</br></a></td>
-					 <td><a href="https://www.freedidi.com/7587.html" target="_blank">Github 上超强的10款开源软件和项目</br></a></td>
-					 <td><a href="https://github.com/fxsjy/jieba/" target="_blank">中文分词jieba</br></a></td>
-					 <td><a href="https://docs.github.com/cn/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll" target="_blank">使用 Jekyll 设置 GitHub Pages 站点</br></a></td>
-					</tr>
-					</table>
-					<table style="width:100%">
-						<tr>
-						<nav style="display:flex";align-items:left;>	
-						<div class="menu"><h2>实用网页链接：文件格式转换</h2></div></nav>		
-						</tr>
-					<tr>
-						<td><a href="https://www.aconvert.com/" target="_blank">文件格式转换</a></td> 
-						<td><a href="https://smallpdf.com/" target="_blank">PDF</a></td> 
-						<td><a href="https://www.zamzar.com/convert/png-to-ico/#" target="_blank">Online Zamzar png- t0 ico Converter</a></td> 
-						<td><a href="https://www.zamzar.com/convert/pps-to-pptx/" target="_blank">Online Zamzar pps-to-pptx Converter</a></td>
-						<td><a href="https://www.aconvert.com/" target="_blank">ONLINE CONVERTER</a></td>
-						<td><a href="https://www.bitbug.net/" target="_blank">制作ico图标格式</a></td>
-					</tr>
-				</table>
-				------------------------------------------------------------------------------------------------------
-				<table style="width:100%">
-				<tr>						
-				<nav style="display:flex";align-items:center;>
-					<div class="user"><h2>实用链接：压缩</h2></div>
-				</nav>	
-				
-				<tr>
-						<td><a href="https://www.ilovepdf.com/zh-cn/compress_pdf" target="_blank">压缩一个PDF文件</a></td> 
-						<td><a href="https://www.veed.io/video-compressor" target="_blank">Video Compressor</a></td>
-						<td><a href="https://www.freeconvert.com/video-compressor" target="_blank">Free Video Compressor</a></td>
-						<td><a href="https://crop-circle.imageonline.co/" target="_blank">Crop a circle in image online</a></td>
-					</tr>
-					</table>
-					------------------------------------------------------------------------------------------------------
-					<table style="width:100%">
-				<tr>	
-					<nav style="display:flex";align-items:center;>
-						<div class="logo"><h2>实用链接：下载字幕，生成印章</h2></div>
-					</nav>	
-						<tr>
-								<td><a href="https://downsub.com/" target="_blank">下载YOUTUBE字幕</a></td> 
-								<td><a href="https://download.checksub.com/" target="_blank">Download and Edit subtitles
-									from Youtube videos</a></td>
-								<td><a href="http://yinzhang.wz5.com/" target="_blank">印章生成器,印章在线制作</a></td>
-								<td><a href="https://www.gaitubao.com/yinzhang/" target="_blank">在线生成印章</a></td>
-							</tr>
-							</table>
-					------------------------------------------------------------------------------------------------------
-				<table style="width:100%">
-				<tr>	
-					<nav style="display:flex";align-items:center;>
-						<div class="menu"><h2>实用链接：数据恢复，安全,磁盘清理</h2></div>
-					</nav>	
-						<tr>
-								<td><a href="https://www.huorong.cn/person5.html" target="_blank">火絨安全</a></td> 
-								<td><a href="https://www.ccleaner.com/recuva" target="_blank">Recuva数据恢复</a></td>
-								<td><a href="https://www.bleachbit.org/" target="_blank">BleachBit磁盘清理</a></td>
-								<td><a href="https://www.cleanpng.com/" target="_blank">cleanpng</a></td>
-							</tr>
-							</table>
-					------------------------------------------------------------------------------------------------------
-				<table style="width:100%">
-					<nav style="display:flex";align-items:center;>
-						<div class="user"><h2>云服务器</h2></div>
-					</nav>	
-					<tr>
-								<td><a href="https://docs.zoho.com/migratetowd" target="_blank">ZohoPCWorkDrive</a></td> 
-								<td><a href="https://infini-cloud.net/en/modules/mypage/usage/​" target="_blank">infini-cloud 45GB免费云服务器</a></td>
-								<td><a href="https://www.raidrive.com/identity/account/login​" target="_blank">raidrive</a></td>
-								<td><a href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html" target="_blank">wordcloud</a></td>
-							</tr>
-							</table>				
-					------------------------------------------------------------------------------------------------------
-				<table style="width:100%">
-					<tr>
-					<nav style="display:flex";align-items:center;>
-						<div class="logo"><h2>实用链接：OCR图片转文字，图片清理</h2></div>
-					</nav>	
-					<tr>
-								<td><a href="https://online.easyscreenocr.com/" target="_blank">Free ONLINE OCR图片转文字</a></td> 
-								<td><a href="https://crop-circle.imageonline.co/" target="_blank">Crop a circle in image online</a></td>
-								<td><a href="https://www.cleanpng.com/" target="_blank">cleanpng</a></td>
-								<td><a href="https://cleanup.pictures/" target="_blank">Cleanup.pictures</a></td>
-							</tr>
-							</table>				
-				</ul>
-		</div>		
-		<div class="box">
-				<ul class="items">
-					<table style="width:100%">
-						<tr>
-						<nav style="display:flex";align-items:left;>	
-						<div class="logo"><h2>实用网页链接：Software1</h2></div></nav></tr>		
-						<tr>
-						 <td><a href="https://www.downloadtwittervideo.com/zh-cn/#TaskResults" target="_blank">下载的twitter视频</br></a></td>
-						 <td><a href="Https://www.d-id.com/" target="_blank">D-ID数字人</br></a></td>
-						 <td><a href="https://www.freedownloadmanager.org/zh/" target="_blank">FDM下载软件</a></td>
-						 <td><a href="https://link.xsolla.com/KZBi89AY" target="_blank">VoiceMod Voice Changer</br></a></td>
-						 <td><a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">DaVinci Resolve</br></a></td>
-						 <td><a href="http://www.videosoftdev.com/" target="_blank">VSDC</br></a></td>
-						</tr>
-						</table>
-						<table style="width:100%">
-							<tr>
-							<nav style="display:flex";align-items:left;>	
-							<div class="menu"><h2>实用网页链接：Software2</h2></div></nav>		
-							</tr>
-						<tr>
-							<td><a href="hhttps://www.voidtools.com/zh-cn/" target="_blank">No.1.文件搜索软件Everything</a></td> 
-							<td><a href="https://www.techspot.com/downloads/6843-wox.html" target="_blank">No.2.Wox 根据键入启动、存取程序和web 内容</a></td> 
-							<td><a href="hhttps://www.ccleaner.com" target="_blank">No.3.CCleaner</a></td>
-							<td><a href="http://cn.ejie.me" target="_blank">No.4.Clover</a></td>
-							<td><a href="http://www.internetdownloadmanager.com" target="_blank">No.5.极速下载工具IDM</a></td>
-						</tr>
-					</table>
-					<table style="width:100%">
-						<tr>
-						<nav style="display:flex";align-items:left;>	
-						<div class="user"><h2>实用网页链接：Software3</h2></div></nav>		
-						</tr>
-					<tr>
-							<td><a href="https://potplayer.daum.net/?lang=zh_CN​" target="_blank">No.6.PotPlayer</a></td> 
-							<td><a href="https://geekuninstaller.com" target="_blank">No.8.Geek Uninstaller</a></td> 
-							<td><a href="https://sparanoid.com/lab/7z" target="_blank">No.9.7-Zip</a></td>
-							<td><a href="https://shotcut.org/" target="_blank">Shotcut</a></td>
-							<td><a href="https://www.openshot.org/zh-hans/" target="_blank">Openshot</a></td>
-						</tr>
-					</table>
-					------------------------------------------------------------------------------------------------------
-					<table style="width:100%">
-						<tr>
-						<nav style="display:flex";align-items:left;>	
-						<div class="logo"><h2>实用网页链接：Software4</h2></div></nav>		
-						</tr>
-					<tr>
-							<td><a href="https://www.nchsoftware.com/videopad/..." target="_blank">VideoPad</a></td> 
-							<td><a href="https://fxhome.com/product/products" target="_blank">HitFilm</a></td> 
-							<td><a href="https://kdenlive.org" target="_blank">Kdenlive</a></td>
-							<td><a href="https://screenrec.com/" target="_blank">ScreenRec</a></td>
-							<td><a href="https://mathewsachin.github.io/Captura/" target="_blank">Captura</a></td>
-						</tr>
-					</table>
-					------------------------------------------------------------------------------------------------------
-					<table style="width:100%">
-						<tr>
-						<nav style="display:flex";align-items:left;>	
-						<div class="menu"><h2>实用网页链接：Software5</h2></div></nav>		
-						</tr>
-					<tr>
-							<td><a href="https://obsproject.com/" target="_blank">OBS Studio</a></td> 
-							<td><a href="http://bit.ly/3oeXDbP" target="_blank">Uninstaller</a></td> 
-							<td><a href="https://gaoqing.fm" target="_blank">高清电台</a></td>
-							<td><a href="https://screenrec.com/" target="_blank">ScreenRec</a></td>
-							<td><a href="https://mathewsachin.github.io/Captura/" target="_blank">Captura</a></td>
-						</tr>
-					</table>
-					------------------------------------------------------------------------------------------------------
-					</ul>
-		</div>
-	</main>		
-	<nav style="display:flex";align-items:center;>
-		<div class="logo">莫烦网页链接：</div>
-		<div class="menu">"机器学习：</div>
-		<div class="user">数据处理：</div>
-		
-	</nav>
-	<main>
-        <div class="box">
-			<ul class="items">
-              <a class=""
-                 href="https://mofanpy.com/learning-steps/">
-                <img class="icon-image" src="https://mofanpy.com/static/img/icon/learning-steps.png" alt="推荐学习顺序">
-                推荐学习顺序
-              </a><br>
-
-               <a class="clicker"
-                 href="">
-                <img class="icon-image" src="https://mofanpy.com/static/img/icon/python_icon.png" alt="Python基础 ▾">
-                Python基础 ▾
-              </a>
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/multiprocessing_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="多进程 multiprocessing">
-                        <a href="https://mofanpy.com/tutorials/python-basic/multiprocessing/">多进程 multiprocessing</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/thread_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="多线程 threading">
-                        <a href="https://mofanpy.com/tutorials/python-basic/threading/">多线程 threading</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/GUI_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="窗口视窗 Tkinter">
-                        <a href="https://mofanpy.com/tutorials/python-basic/tkinter/">窗口视窗 Tkinter</a></li>
-           		</ul>
-		   </div>
-       <div class="box">
-		   <ul class="items">
-
-           <li class="dropbtn">
-              <a class="clicker" href="">
-                  <img class="icon-image" src="https://mofanpy.com/static/img/icon/ML_icon.png" alt="机器学习 ▾">
-                机器学习 ▾
-              </a>
-
-                <ul class="dropdown-content">
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/ML_intro_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="有趣的机器学习">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/ML-intro/">有趣的机器学习</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/rl_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="强化学习 Reinforcement Learning">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/reinforcement-learning/">强化学习 Reinforcement Learning</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/evolution_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="进化算法 Evolutionary Algorithm">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/evolutionary-algorithm/">进化算法 Evolutionary Algorithm</a></li>
-
-                      <li class="dropbtn"><img class="icon-image" src="https://mofanpy.com/static/img/icon/neural_net_icon.png"
-                                               style="max-width:1.5em; max-height:1.1em;" alt="神经网络 ▾">
-                        <a class="clicker">神经网络 ▾</a>
-                        <ul class="dropdown-content">
-
-                            <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/tf_icon.png"
-                                     style="max-width:1.5em; max-height:1.1em;" alt="Tensorflow">
-                              <a href="https://mofanpy.com/tutorials/machine-learning/tensorflow/">Tensorflow</a>
-                            </li>
-
-                            <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/torch_icon.png"
-                                     style="max-width:1.5em; max-height:1.1em;" alt="PyTorch">
-                              <a href="https://mofanpy.com/tutorials/machine-learning/torch/">PyTorch</a>
-                            </li>
-
-                            <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/theano_icon.png"
-                                     style="max-width:1.5em; max-height:1.1em;" alt="Theano">
-                              <a href="https://mofanpy.com/tutorials/machine-learning/theano/">Theano</a>
-                            </li>
-
-                            <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/keras_icon.jpg"
-                                     style="max-width:1.5em; max-height:1.1em;" alt="Keras">
-                              <a href="https://mofanpy.com/tutorials/machine-learning/keras/">Keras</a>
-                            </li>
-                        </ul>
-                      </li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/sklearn_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="通用机器学习 Scikit-learn">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/sklearn/">通用机器学习 Scikit-learn</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/nlp_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="自然语言处理">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/nlp/">自然语言处理</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/ML-practice_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="机器学习实战">
-                        <a href="https://mofanpy.com/tutorials/machine-learning/ML-practice/">机器学习实战</a></li>
-                </ul>
-            </li>
-			</ul>
-			</div>
-	<div class="box">
-     	<ul class="items">
-            <li class="dropbtn">
-              <a class="clicker"
-                 href="">
-                <img class="icon-image" src="https://mofanpy.com/static/img/icon/data_icon.png" alt="数据处理 ▾">
-                数据处理 ▾
-              </a>
-
-                <ul class="dropdown-content">
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/np_pd_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="数据 Numpy &amp; Pandas">
-                        <a href="https://mofanpy.com/tutorials/data-manipulation/np-pd/">数据 Numpy &amp; Pandas</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/plt_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="画图 Matplotlib">
-                        <a href="https://mofanpy.com/tutorials/data-manipulation/plt/">画图 Matplotlib</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/scraping_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="网页爬虫">
-                        <a href="https://mofanpy.com/tutorials/data-manipulation/scraping/">网页爬虫</a></li>
- 
-       <ul class="items">
-            <li class="dropbtn">
-              <a class="clicker"
-                 href="">
-                <img class="icon-image" src="https://mofanpy.com/static/img/icon/others_icon.png" alt="提效工具 ▾">
-                提效工具 ▾
-              </a>
-                <ul class="dropdown-content">
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/git_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="Git 版本管理">
-                        <a href="https://mofanpy.com/tutorials/others/git/">Git 版本管理</a></li>
-
-                      <li><img class="icon-image" src="https://mofanpy.com/static/img/icon/linux_icon.png"
-                               style="max-width:1.5em; max-height:1.1em;" alt="Linux 简易教学">
-                        <a href="https://mofanpy.com/tutorials/others/linux-basic/">Linux 简易教学</a></li>
-                </ul>
-            </li>
-        </ul>
-      </li>
-      <li class="nav-notification nav-float-right"></li>
-    </ul>
-	</div>
-</main>	
-	<h3>对话框</h3>
-		<button onclick="showDialog()">联络信息</button>
-		<div id="dialog" class="dialog">
-		<div onclick="closeDialog()">X</div>
-			在这里面加入对话框中的内容<br/>
-			例如Email:test@test.com
-		</div><br/>
-	<footer>该网站共二页，请按<a href="index.html" class="button">Back</a>按钮转第一页。</footer>
-</body>
-</html>
+																						
+														</ul>
+												</div>
+									
+												<div class="box">		
+																<ul class="items">
+																		<nav style="display:flex";align-items:center;>	
+																				<div class="user"><h2>我的音乐链接</h2></div>
+																</nav>
+																<table style="width:100%">
+																						<tr>
+																						<td><a href="https://www.youtube.com/watch?v=pYYTdtRrg8M" target="_blank">Johann Strauss Sr. "Radetzky March" </a></td>  
+																						<td><a href="https://www.youtube.com/watch?v=vmr34RXu_aM" target="_blank">Andre' Rieu - Tristesse Violin - Chopin Etude Op.10 No3</a></td>
+																						<td><a href="https://www.youtube.com/watch?v=Nzo3atXtm54"target="_blank" >Johannes Brahms -- Hungarian Dance No.5</a></td>
+																						</tr>
+																						<tr>
+																						<td><a href="https://www.youtube.com/watch?v=nSIjIb_pj4E"target="_blank" >探戈演奏曲</a></td>   
+																						<td><a href="https://www.youtube.com/watch?v=79ro3UeDhhg"target="_blank" >柴可夫斯基. 莫札特. 貝多芬 - Happy Classical Music</a></td> 
+																						<td><a href="https://www.youtube.com/watch?v=ydKwY0tqAXQ"target="_blank" >Beethoven ~ Sonata Claro de Luna + 300 Pinturas</a></td>
+																						</tr>
+																						<tr> 
+																						<td><a href="https://www.youtube.com/watch?v=erXCJ_HSaS4" target="_blank">梁祝小提琴</a></td>
+																						<td><a href="https://www.youtube.com/watch?v=JYNjTlMMPyI"target="_blank" >优美的轻音乐19首珍藏版</a></td>
+																						<td><a href="https://www.youtube.com/watch?v=mQTIzdnox2M"target="_blank" >古典音乐 15首 纯音乐 Bandari</a></td>
+																						</tr>
+																						<tr>
+																						<td><a href="https://www.youtube.com/watch?v=90brkM2iKK0"target="_blank" >輕鬆浪漫古典華爾滋合集</a></td>  
+																						<td><a href="https://www.youtube.com/watch?v=c57aFp4LAO4" target="_blank">蓝色多瑙河</a></td>
+																						<td><a href="https://www.youtube.com/watch?v=zzfTW6HbrvU" target="_blank">皇帝圓舞曲</a></td> 
+																						</tr>
+																						<tr>
+																						<td><a href="https://www.youtube.com/watch?v=aOcWrhCd4M8" target="_blank">春之声圓舞曲</a></td> 
+																						<td><a href="https://www.youtube.com/watch?v=x9DRhnesMko" target="_blank">孟德爾頌 - 交響曲第4號A大調「義大利」作品Mendelssohn Symphony no 4</a></td> 
+																						<td><a href="https://www.youtube.com/watch?v=IPpViVAl360&ab_channel=PlayRelaxingChinese"  target="_blank">50首 薩克斯風 輕音樂 放鬆解壓</a></td>
+																						</tr>
+																						<tr>
+																							<td><a href="https://www.youtube.com/watch?v=aHHzp7hKl4k&t=762s&ab_channel=%E4%B8%80%E8%B5%B7%E6%AC%A3%E8%B5%8F%E5%A5%BD%E9%9F%B3%E4%B9%90RelaxingMind"target="_blank" >十首著名小夜曲</a></td>   
+																							<td><a href="https://www.youtube.com/watch?v=zo-0d2djo7w&ab_channel=%E4%B8%80%E8%B5%B7%E6%AC%A3%E8%B5%8F%E5%A5%BD%E9%9F%B3%E4%B9%90RelaxingMind"target="_blank" >Schubert Serenade 舒伯特 小夜曲 on Saxophone - 萨克斯|guitar - 吉他|violin - 小提琴|flute - 长笛|piano - 钢琴【轻音乐】</a></td> 
+																							<td><a href="https://www.youtube.com/watch?v=pvKKK8MwFyM&ab_channel=%E6%8E%A2%E7%B4%A2%E5%B0%8F%E6%8F%90%E7%90%B4"target="_blank" >首選10首優美的小提琴版世界傳統歌曲</a></td>
+																							</tr>
+																							<tr> 
+																							<td><a href="https://www.youtube.com/watch?v=nHfo9xP8Zm4&ab_channel=GoldenKeys" target="_blank">timeless works of classical music(No Ads) | Vivaldi, Mozart, Beethoven, Chopin | Healing, Relaxation</a></td>
+																							<td><a href="https://www.youtube.com/watch?v=EInUjKfb5BI&ab_channel=TCloudViolines%EF%B8%8F%EF%B8%8F%F0%9F%8E%BB"target="_blank" >Collection of the Best Spanish Violins</a></td>
+																							<td><a href="https://www.youtube.com/watch?v=mQTIzdnox2M"target="_blank" >古典音乐 15首 纯音乐 Bandari</a></td>
+																							</tr>
+																							<tr>
+																							<td><a href="https://www.youtube.com/watch?v=WdP6KxxflwQ&ab_channel=%E6%88%91%E8%A7%86%E9%9F%B3%E4%B9%90-ISEE"target="_blank" >10首史诗般的交响乐终曲 - 德沃夏克、马勒、贝多芬等作曲</a></td>  
+																							<td><a href="https://www.youtube.com/watch?v=nSK8SIxpBr4&ab_channel=RenaissanceClassical" target="_blank">Top 21 Best of Classical Music that You Should Listen to Once in Your Life</a></td>
+																							<td><a href="https://www.youtube.com/watch?v=8HlHhUQDWc0&t=10s&ab_channel=%E6%8E%A2%E7%B4%A2%E5%B0%8F%E6%8F%90%E7%90%B4" target="_blank">首選10首小提琴獨奏曲</a></td> 
+																							</tr>
+																							<tr>
+																							<td><a href="https://www.youtube.com/watch?v=Dq-qXYjgjkY" target="_blank">柴可夫斯基：《天鵝湖》"圓舞曲"</a></td> 
+																							<td><a href="https://www.youtube.com/watch?v=mMBKsoTrLdM&ab_channel=%E9%9F%B3%E6%A8%82%E5%AE%B6%E7%9A%84%E7%84%A1%E8%81%8A%E4%BA%BA%E7%94%9FMusicianSeacow" target="_blank">柴可夫斯基受盡折磨後的神作：《羅密歐與茱麗葉》幻想序曲</a></td> 
+																							<td><a href="https://www.youtube.com/watch?v=pxq8L5En94k&ab_channel=%E6%82%A0%E9%97%B2%E9%9F%B3%E4%B9%90%E5%8A%A0%E6%B2%B9%E7%AB%99"  target="_blank">【古典音乐】13首古典音乐，经典名曲精选集，HiFi高音质发烧碟</a></td>
+																							</tr>
+																						</table>	</ul></div>
+																						<div class="box">		
+																							<ul class="items">
+																									<nav style="display:flex";align-items:center;>	
+																											<div class="user"><h2>实用网页链接1</h2></div>
+																							</nav><table style="width:100%">
+																																																
+																								<tr>
+																								 <td><a href="Https://fontawesome.com" target="_blank">the Internet's icon library</br></a></td>
+																								 <td><a href="https://fonts.google.com" target="_blank">Google Fonts</a></td>
+																								 <td><a href="https://fontawesome.com/" target="_blank">Font Awesome 6.1.1</br></a></td>
+																								 <td><a href="https://www.googlefonts.cn/chinese" target="_blank">Google Font Chinese</br></a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://fonts.google.com/noto/specimen/Noto+Sans+SC" target="_blank">Noto Sans Simplified Chinese</a></td> 
+																										<td><a href="https://ionic.io/ionicons" target="_blank">ionicons 5.5.2</a></td> 
+																										<td><a href="https://github.com/copytranslator/CopyTranslator/" target="_blank">CopyTranslator</a></td>
+																										<td><a href="https://www.deepl.com/translator" target="_blank">DeepL Translator</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://www.ooopn.com/" target="_blank">盒子学术</a></td>
+																										<td><a href="https://lokeshdhakar.com/projects/lightbox2/" target="_blank">LIGHTBOX</a></td> 
+																										<td><a href="ttp://code.ciaoca.com/jquery/lightbox/" target="_blank">jQuery lightBox 灯箱效果</a></td>
+																										<td><a href="https://colorpicker.me/#c5b824" target="_blank">online color Picker</a></td>
+																										<td><a href="https://www.google.com/search?client=aff-ime&sxsrf=AOaemvJ9rk5uEuCgu8CVBrKGRzOLaIiVMQ:1639934488396&q=Color+picker&si=AHuW2sRgwxu5mSGMeMv1y53CRkBWsKqVpLbMXgAKNip6jW0j_lKTyBPL22KrMV827mQXonTquHJtAgtKF36aQDwGfufFJHTzvV3faOBikWW7PJzFGWT1CgBQjF5twHQfX08DY-OsQb-1HLEl9NekCOPc17_Jwz6WW880az4KKsc1uvW2Oxt4KPE%3D&sa=X&ved=2ahUKEwiPwoqFsPD0AhXElIkEHTLqBkYQ6RN6BAgjEAE&biw=1246&bih=960&dpr=1" target="_blank">Color tool</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://zh.wikihow.com/%E9%A6%96%E9%A1%B5/" target="_blank">wikiHow</a></td> 
+																										<td><a href="https://www.timeanddate.com/" target="_blank">timeanddate</a></td> 
+																										<td><a href="http://www.pptkj.net/" target="_blank">PPT 课件</a></td>
+																										<td><a href="https://www.freedidi.com/5538.html" target="_blank">Chrome 浏览器上最值得推荐的8款插件</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://bittly.cc/OZHFr" target="_blank">AI 写作，支持 N/A/I卡 GPU 加速 </a></td> 
+																										<td><a href="https://www.scalenut.com/" target="_blank">Scalenut</a></td> 
+																										<td><a href="https://www.sitekick.com/" target="_blank">Sitekick</a></td>
+																										<td><a href="https://caniuse.com" target="_blank">Can I Use</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://www.pexels.com/zh-cn/" target="_blank">pexels free images</a></td> 
+																										<td><a href="https://unsplash.com/s/photos/pexels" target="_blank">pexels</a></td> 
+																										<td><a href="https://www.bing.com/images/search?q=pexels+free+images&qpvt=pexels+free+images&form=IGRE&first=1&tsc=ImageBasicHover" target="_blank">Microfoft Bing pexels free images</a></td>
+																										<td><a href="https://caniuse.com" target="_blank">Can I Use</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://www.deepl.com/translator/files" target="_blank">Deepl 文件翻译器</a></td>
+																										<td><a href="https://deftpdf.com/translate" target="_blank">Dept 文件翻译器</a></td>
+																										<td><a href="https://products.groupdocs.app/translation/total/english-chinese" target="_blank">Group 文件翻译器</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://dubbing.felo.me/" target="_blank">YouTube 视频多语言翻译器</a></td>
+																										<td><a href="https://immersivetranslate.com/" target="_blank">沉浸式翻译器</a></td>
+																										<td><a href="https://dict.youdao.com/" target="_blank">有道翻译</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://youglish.com/" target="_blank">用 YouTube 改进发音</a></td>
+																										<td><a href="https://translate.google.ie/?sl=auto&tl=zh-CN&text=immersive%20translate&op=translate" target="_blank">多语言多类别Google翻译器</a></td>
+																										<td><a href="https://play.ht/" target="_blank">具有逼真文字转语音功能的AI语音生成器</a></td>
+																								</tr>
+																								<tr>
+																										<td><a href="https://box123.io/" target="_blank">盒子123</a></td>
+																										<td><a href="https://xiaolincoding.com/" target="_blank">图解系列</a></td>
+																										<td><a href="https://textfx.withgoogle.com/" target="_blank">TextFX-10 Google Tools</a></td>
+																								</tr>
+																								</table>							
+																</ul>
+												</div>
+										</main>
+										
+										<main>
+												<div class="box">
+														<ul class="items">
+														<table style="width:100%">
+														<nav style="display:flex";align-items:center;>	
+																		<div class="logo"><h2>我的课程链接</h2></div>
+														</nav>
+																<tr>
+																				<td><a href="https://github.com/jackfrued/Python-Core-50-Courses" target="_blank">Python-50课程</a></td>  
+																				<td><a href="https://www.cloudskillsboost.google/journeys/118" target="_blank">Google AI cloud 课程</a></td>
+																				<td><a href="https://www.tutorialspoint.com/index.htm" target="_blank">学习平台</a></td>
+																				</tr>
+																<tr>
+																				<td><a href="https://training.pada-x.com/online.htm" target="_blank">彭彭课程</a></td>  
+																				<td><a href="http://coursera.org" target="_blank">Coursera 课程</a></td>
+																				<td><a href="https://www.youtube.com/channel/UCcIXc5mJsHVYTZR1maL5l9w" target="_blank">Deeplearning.ai课程</a></td>
+																				</tr>
+																				<tr>
+																				<td><a href="https://www.youtube.com/playlist?list=PLkDaE6sCZn6HJ1XrZLpKeWQN5XMKhEz_V" target="_blank">AI for Good Specialization by DeepLearning.AI</a></td>   
+																				<td><a href="https://www.youtube.com/channel/UC5zx8Owijmv-bbhAK6Z9apg" target="_blank">Artificial Intelligence - All in One</a></td>   
+																				<td><a href="https://www.coursera.org/lecture/generative-ai-with-llms/course-introduction-9uWab" target="_blank">Generative AI with Large Language Models</a></td> 
+																				<td><a href="https://www.deeplearning.ai/short-courses/" target="_blank">LEARN GENERATIVE AI
+																						Short Courses</a></td>
+																				</tr>
+																				<tr> 
+																				<td><a href="https://www.youtube.com/channel/UC9kOupnRoiKdeOJILgQ1CsA" target="_blank">程序员小飞课程</a></td>
+																				<td><a href="https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg" target="_blank">Morvan课程</a></td>
+																				<td><a href="https://www.youtube.com/channel/UC2ggjtuuWvxrHHHiaDH1dlQ" target="_blank">Hung-yi Lee课程</a></td>
+																				<td><a href="https://www.youtube.com/channel/UCGj-3RuJeNdzTsACq8beDRg" target="_blank">C 鱼课程</a></td>
+																				</tr>
+																				<tr>
+																				<td><a href="https://www.youtube.com/channel/UC6F7TKhp26EZOPrQg9hCZaQ" target="_blank">亚斯特拉的索哥课程</a></td>  
+																				<td><a href="https://www.youtube.com/watch?v=TjHslMeJ81k&ab_channel=%E8%B5%B0%E6%AD%AA%E7%9A%84%E5%B7%A5%E7%A8%8B%E5%B8%ABJames" target="_blank">Git and GitHub基础课程</a></td>
+																				<td><a href="https://www.youtube.com/watch?v=RGOj5yH7evk&ab_channel=freeCodeCamp.org" target="_blank">Git and GitHub for Beginners Crash course</a></td> 
+																				<td><a href="https://help.fitbit.com/articles/en_US/Help_article/2437.htm" target="_blank">Fitbit User Manuals</a></td> 
+																				</tr>
+																				<tr>						
+																				<td><a href="https://www.bilibili.com/video/BV1VL4y1q7qX/?spm_id_from=333.788.recommend_more_video.-1&vd_source=614907f3498f61d2f0e2cb0568877286" target="_blank">Google Colab系列视频（一）：Colab 简介，在谷歌云上编写，运行和共享代码</a></td> 
+																				<td><a href="hhttps://www.bilibili.com/video/BV1K3411876U/?spm_id_from=autoNext&vd_source=614907f3498f61d2f0e2cb0568877286"  target="_blank">Google Colab系列视频（二）：在Colab中安装GPU版本的TensorFlow及pytorch</a></td>
+																				<td><a href="https://www.bilibili.com/video/BV1Qr4y1k7F1/?spm_id_from=autoNext&vd_source=614907f3498f61d2f0e2cb0568877286" target="_blank">Google Colab系列视频（三）：在Colab中加载文件/数据</a></td>
+																				</tr>
+																				</table>	
+																				-------------------------------------------------------------------------------------------------------
+																				<table style="width:100%">
+																						<tr>
+																						<nav style="display:flex";align-items:left;>	
+																						<div class="logo"><h2>实用网页链接2：有关信息</h2></div></nav>		
+																						<tr>
+																						 <td><a href="Https://caihengsheng.github.io/" target="_blank">老蔡网站</br></a></td>
+																						 <td><a href="Https://caih1943.github.io/" target="_blank">老蔡网页</a></td>
+																						 <td><a href="Https://www.youtube.com/" target="_blank">我的 Youtube</br></a></td>
+																						 <td><a href="Https://twitter.com/home/" target="_blank">我的 Twitter</br></a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="Https://my.yahoo.com/" target="_blank">我的 Yahoo</a></td> 
+																								<td><a href="Https://caihengsheng.wordpress.com/" target="_blank">我的 wordpress</a></td> 
+																								<td><a href="Https://mail.protonmail.com/inbox" target="_blank">我的 protoMail</a></td>
+																								<td><a href="Http://caih2005.blogspot.com/" target="_blank">我的大学照片</a></td>
+																						</tr>
+																						<tr>
+																								<td><a href="Https://pan.baidu.com/disk/timeline#/timeline" target="_blank">百度网盘照片</a></td> 
+																								<td><a href="Https://onedrive.live.com/?v=photos&id=root&cid=aef3890df59b89ff&qt=allmyphotos" target="_blank">ONE Driver 照片</a></td>
+																								<td><a href="Https://photos.google.com/?pli=1" target="_blank">Google Photos</a></td>
+																								<td><a href="Https://www.raidrive.com/" target="_blank">raidrive</a></td>
+																						</tr>
+																						</table>
+																
+																						-------------------------------------------------------------------------------
+																		
+																
+																						<table style="width:100%">
+																								<tr>
+																								<nav style="display:flex";align-items:center;>	
+																										<div class="menu"><h2>实用网页链接3：图书馆信息</h2></a></div>
+																								</nav>	
+																								<td><a href="https://hollis.harvard.edu/" target="_blank">哈佛大学HOLLIS</a></td>
+																								<td><a href="https://ndlonline.ndl.go.jp" target="_blank">日本国会图书馆</a></td>
+																								<td><a href="https://Ottawa.overdrive.com/" target="_blank">渥太华图书馆</a></td>
+																								<td><a href="https://libweb.zju.edu.cn/" target="_blank">浙江大学图书馆</a></td>
+																								</tr>
+																								<tr>
+																								<td><a href="https://cadal.edu.cn/index/home" target="_blank">cadal大学数字图书馆国际合作计划</a></td>
+																								<td><a href="https://www.oalib.com/" target="_blank">Oalib论文搜索</a></td>
+																								<td><a href="https://ir.library.osaka-u.ac.jp/repo/ouka/all/?lang=0" target="_blank">大阪大学科学信息库</a></td> 
+																								<td><a href="http://www.nssd.cn/" target="_blank">国家哲学社会科学学术期刊数据库</a></td>
+																								<tr>
+																								<td><a href="https://www.ahhhhfs.com/" target="_blank">ahhhhfs搜索</a></td>
+																								<td><a href="https://www.csdn.net/" target="_blank">CSDN</a></td> 
+																								<td><a href="http://zhishifenzi.com/depth/" target="_blank">知识分子</a></td>
+																								<td><a href="https://www.fosshub.com/" target="_blank">纯净软件下载网</a></td>
+																								</tr>
+																						</table>
+																<ul>
+												</div>	
+										
+												<div class="box">
+																<ul class="items">
+																		<table style="width:100%">
+																		<tr>
+																		<nav style="display:flex";align-items:left;>	
+																		<div class="logo"><h2>实用网页链接4：github</h2></div></nav></tr>		
+																		<tr>
+																		 <td><a href="https://github.com/caihengsheng/caihengsheng.github.io/" target="_blank">老蔡网站Github</br></a></td>
+																		 <td><a href="https://github.com/caih1943/caih1943.github.io/" target="_blank">老蔡网页Github</br></a></td>
+																		 <td><a href="https://github.com/langgenius/dify" target="_blank">Dify</br></a></td>
+																		 <td><a href="https://github.com/sugarforever/chat-ollama/tree/main" target="_blank">Sugarforever</br></a></td>
+																		 <td><a href="https://github.com/fxsjy/jieba/" target="_blank">中文分词jieba</br></a></td></tr><tr>
+																		 <td><a href="https://github.com/open-webui/open-webui" target="_blank">AI 健康助手</br></a></td>
+																		 <td><a href="https://www.toolify.ai/" target="_blank">5300+ Best AI Companies and Tools</br></a></td>
+																		 <td><a href="https://www.freedidi.com/7587.html" target="_blank">Github 上超强的10款开源软件和项目</br></a></td>
+																		 <td><a href="https://github.com/deepseek-ai/DeepSeek-R1" target="_blank">DeepSeek</br></a></td>
+																		 <td><a href="https://docs.github.com/cn/github/working-with-github-pages/setting-up-a-github-pages-site-with-jekyll" target="_blank">使用 Jekyll 设置 GitHub Pages 站点</br></a></td>
+																		</tr>
+																		</table>
+																		<table style="width:100%">
+																				<tr>
+																				<nav style="display:flex";align-items:left;>	
+																				<div class="menu"><h2>实用网页链接5：文件格式转换</h2></div></nav>		
+																				</tr>
+																		<tr>
+																				<td><a href="https://www.aconvert.com/" target="_blank">文件格式转换</a></td> 
+																				<td><a href="https://smallpdf.com/" target="_blank">PDF</a></td> 
+																				<td><a href="https://www.zamzar.com/convert/png-to-ico/#" target="_blank">Online Zamzar png- t0 ico Converter</a></td> 
+																				<td><a href="https://www.zamzar.com/convert/pps-to-pptx/" target="_blank">Online Zamzar pps-to-pptx Converter</a></td>
+																				<td><a href="https://www.aconvert.com/" target="_blank">ONLINE CONVERTER</a></td>
+																				<td><a href="https://www.bitbug.net/" target="_blank">制作ico图标格式</a></td>
+																		</tr>
+																</table>																
+																<table style="width:100%">
+																<tr>						
+																<nav style="display:flex";align-items:center;>
+																		<div class="user"><h2>实用链接6：压缩</h2></div>
+																</nav>																	
+																<tr>
+																				<td><a href="https://www.ilovepdf.com/zh-cn/compress_pdf" target="_blank">压缩一个PDF文件</a></td> 
+																				<td><a href="https://www.veed.io/video-compressor" target="_blank">Video Compressor</a></td>
+																				<td><a href="https://www.freeconvert.com/video-compressor" target="_blank">Free Video Compressor</a></td>
+																				<td><a href="https://crop-circle.imageonline.co/" target="_blank">Crop a circle in image online</a></td>
+																		</tr>
+																		</table>																		
+																		<table style="width:100%">
+																<tr>	
+																		<nav style="display:flex";align-items:center;>
+																				<div class="logo"><h2>实用链接7：下载字幕，生成印章</h2></div>
+																		</nav>	
+																				<tr>
+																								<td><a href="https://downsub.com/" target="_blank">下载YOUTUBE字幕</a></td> 
+																								<td><a href="https://download.checksub.com/" target="_blank">Download and Edit subtitles
+																										from Youtube videos</a></td>
+																								<td><a href="http://yinzhang.wz5.com/" target="_blank">印章生成器,印章在线制作</a></td>
+																								<td><a href="https://www.gaitubao.com/yinzhang/" target="_blank">在线生成印章</a></td>
+																						</tr>
+																						</table>
+																		------------------------------------------------------------------------------------------------------
+																<table style="width:100%">
+																<tr>	
+																		<nav style="display:flex";align-items:center;>
+																				<div class="menu"><h2>实用链接8：数据恢复，安全,磁盘清理</h2></div>
+																		</nav>	
+																				<tr>
+																								<td><a href="https://www.huorong.cn/person5.html" target="_blank">火絨安全</a></td> 
+																								<td><a href="https://www.ccleaner.com/recuva" target="_blank">Recuva数据恢复</a></td>
+																								<td><a href="https://www.bleachbit.org/" target="_blank">BleachBit磁盘清理</a></td>
+																								<td><a href="https://www.cleanpng.com/" target="_blank">cleanpng</a></td>
+																						</tr>
+																						</table>
+																		------------------------------------------------------------------------------------------------------
+																<table style="width:100%">
+																		<nav style="display:flex";align-items:center;>
+																				<div class="user"><h2>云服务器</h2></div>
+																		</nav>	
+																		<tr>
+																								<td><a href="https://docs.zoho.com/migratetowd" target="_blank">ZohoPCWorkDrive</a></td> 
+																								<td><a href="https://infini-cloud.net/en/modules/mypage/usage/​" target="_blank">infini-cloud 45GB免费云服务器</a></td>
+																								<td><a href="https://www.raidrive.com/identity/account/login​" target="_blank">raidrive</a></td>
+																								<td><a href="https://amueller.github.io/word_cloud/generated/wordcloud.WordCloud.html" target="_blank">wordcloud</a></td>
+																						</tr>
+																						</table>				
+																		------------------------------------------------------------------------------------------------------
+																<table style="width:100%">
+																		<tr>
+																		<nav style="display:flex";align-items:center;>
+																				<div class="logo"><h2>实用链接9：OCR图片转文字，图片清理</h2></div>
+																		</nav>	
+																		<tr>
+																								<td><a href="https://online.easyscreenocr.com/" target="_blank">Free ONLINE OCR图片转文字</a></td> 
+																								<td><a href="https://crop-circle.imageonline.co/" target="_blank">Crop a circle in image online</a></td>
+																								<td><a href="https://www.cleanpng.com/" target="_blank">cleanpng</a></td>
+																								<td><a href="https://cleanup.pictures/" target="_blank">Cleanup.pictures</a></td>
+																						</tr>
+																						</table>				
+																</ul>
+												</div>		
+												<div class="box">
+																<ul class="items">
+																		<table style="width:100%">
+																				<tr>
+																				<nav style="display:flex";align-items:left;>	
+																				<div class="logo"><h2>实用网页链接10：Software</h2></div></nav></tr>		
+																				<tr>
+																				 <td><a href="https://www.downloadtwittervideo.com/zh-cn/#TaskResults" target="_blank">下载的twitter视频</br></a></td>
+																				 <td><a href="Https://www.d-id.com/" target="_blank">D-ID数字人</br></a></td>
+																				 <td><a href="https://www.freedownloadmanager.org/zh/" target="_blank">FDM下载软件</a></td>
+																				 <td><a href="https://link.xsolla.com/KZBi89AY" target="_blank">VoiceMod Voice Changer</br></a></td>
+																				 <td><a href="https://www.blackmagicdesign.com/products/davinciresolve/" target="_blank">DaVinci Resolve</br></a></td>
+																				 <td><a href="http://www.videosoftdev.com/" target="_blank">VSDC</br></a></td>
+																				</tr>
+																				</table>
+																				<table style="width:100%">
+																						<tr>
+																						<nav style="display:flex";align-items:left;>	
+																						<div class="menu"><h2>实用网页链接11：Software2</h2></div></nav>		
+																						</tr>
+																				<tr>
+																						<td><a href="hhttps://www.voidtools.com/zh-cn/" target="_blank">No.1.文件搜索软件Everything</a></td> 
+																						<td><a href="https://www.techspot.com/downloads/6843-wox.html" target="_blank">No.2.Wox 根据键入启动、存取程序和web 内容</a></td> 
+																						<td><a href="hhttps://www.ccleaner.com" target="_blank">No.3.CCleaner</a></td>
+																						<td><a href="http://cn.ejie.me" target="_blank">No.4.Clover</a></td>
+																						<td><a href="http://www.internetdownloadmanager.com" target="_blank">No.5.极速下载工具IDM</a></td>
+																				</tr>
+																		</table>
+																		<table style="width:100%">
+																				<tr>
+																				<nav style="display:flex";align-items:left;>	
+																				<div class="user"><h2>实用网页链接12：Software3</h2></div></nav>		
+																				</tr>
+																		<tr>
+																						<td><a href="https://potplayer.daum.net/?lang=zh_CN​" target="_blank">No.6.PotPlayer</a></td> 
+																						<td><a href="https://geekuninstaller.com" target="_blank">No.8.Geek Uninstaller</a></td> 
+																						<td><a href="https://sparanoid.com/lab/7z" target="_blank">No.9.7-Zip</a></td>
+																						<td><a href="https://shotcut.org/" target="_blank">Shotcut</a></td>
+																						<td><a href="https://www.openshot.org/zh-hans/" target="_blank">Openshot</a></td>
+																				</tr>
+																		</table>
+																		<table style="width:100%">
+																				<tr>
+																				<nav style="display:flex";align-items:left;>	
+																				<div class="logo"><h2>实用网页链接13：Software4</h2></div></nav>		
+																				</tr>
+																		<tr>
+																						<td><a href="https://www.nchsoftware.com/videopad/..." target="_blank">VideoPad</a></td> 
+																						<td><a href="https://fxhome.com/product/products" target="_blank">HitFilm</a></td> 
+																						<td><a href="https://kdenlive.org" target="_blank">Kdenlive</a></td>
+																						<td><a href="https://screenrec.com/" target="_blank">ScreenRec</a></td>
+																						<td><a href="https://mathewsachin.github.io/Captura/" target="_blank">Captura</a></td>
+																				</tr>
+																		</table>
+																		------------------------------------------------------------------------------------------------------
+																		<table style="width:100%">
+																				<tr>
+																				<nav style="display:flex";align-items:left;>	
+																				<div class="menu"><h2>实用网页链接14：Software5</h2></div></nav>		
+																				</tr>
+																		<tr>
+																						<td><a href="https://obsproject.com/" target="_blank">OBS Studio</a></td> 
+																						<td><a href="http://bit.ly/3oeXDbP" target="_blank">Uninstaller</a></td> 
+																						<td><a href="https://gaoqing.fm" target="_blank">高清电台</a></td>
+																						<td><a href="https://screenrec.com/" target="_blank">ScreenRec</a></td>
+																						<td><a href="https://mathewsachin.github.io/Captura/" target="_blank">Captura</a></td>
+																				</tr>
+																		</table>
+																		<table style="width:100%">
+																			<tr>
+																			<nav style="display:flex";align-items:center;>	
+																							<div class="menu"><h2>最好的老照片修复软件及其他</h2></div>
+																			</nav>						
+																					<td><a href="https://www.adobe.com/ca/products/photoshop.html" target="_blank">Photoshop AI</a></td>
+																					<td><a href="https://skylum.com/luminar-neo" target="_blank">Luminar Neo</a></td>
+																					<td><a href="https://photoworks.io/" target="_blank">PhotoWorks</a></td>
+																			</tr>
+																			<tr>
+																					<td><a href="https://www.softorbits.net/photo-retoucher/" target="_blank">SoftOrbits Photo Retoucher</a></td> 
+																					<td><a href="https://www.colorpilot.com/retouch.html" target="_blank">Retouch Pilot></td>
+																					<td><a href="https://huggingface.co/spaces/sczhou/CodeFormer" target="_blank">CodeFormer 修復臉部和眼睛</a></td></tr>
+																					<tr>
+																					<td><a href="https://www.upscale.media/" target="_blank">Upscale 模糊照片修复AI工具</a></td> 
+																					<td><a href="https://imglarger.com/" target="_blank">imglarger照片放大增强工具></td>
+																					<td><a href="https://bigjpg.com/" target="_blank">bigjpgAI人工智能圖片放大</a></td>
+																			</tr>
+																					<tr>
+																					<td><a href="https://www.pixelcut.ai/" target="_blank">pixelcut用AI生成 photos 10x faster </a></td> 
+																					<td><a href="https://tinywow.com/image/upscale" target="_blank">Upscale an Image></td>
+																					<td><a href="https://clipdrop.co/image-upscaler" target="_blank">IMAGE UPSCALER 图像放大器</a></td>
+																					<td><a href="https://www.upscayl.org/" target="_blank">用AI Supercharging your images</a></td>
+																			</tr>
+																			<tr>
+																					<td><a href="https://www.strmr.com/examples" target="_blank">Astria AI 自動摳圖/移花接木到別的圖片</a></td>
+																					<td><a href="https://photoai.io/?free_hash=42572a2903f24da850bcd31154e47714" target="_blank">PhotoAI Copycat a photo</a></td>
+																					<td><a href="https://www.freedidi.com/5576.html" target="_blank">AI换脸、图片去背、人声分离等</a></td>
+																			</tr>
+																			<tr>
+																					<td><a href="https://vidbgrem.media.io/app/" target="_blank">视频去背换色、图片去背</a></td> 
+																					<td><a href="https://cleanupphotos.com/" target="_blank">移去不需要的物件、图片去背</a></td>
+																					<td><a href="<>< href="https://jpghd.com/en" target="_blank">老照片修复（收费)</a></td>
+																			</tr>
+																			<tr>
+																					<td><a href="https://bittly.cc/0iYMw" target="_blank">Style2paints - 最强的线描图画上色工具</a></td> 
+																					<td><a href="https://clipdrop.co/relight" target="_blank">Clipdrop AI 智能打光！再也不用買攝影燈！</a></td>
+																					<td><a href="https://crop-circle.imageonline.co/" target="_blank">ONLINE Crop Circle Image</a></td>								
+																			</tr>
+																			<tr>
+																					<td><a href="https://www.memuplay.com/how-to-use-com.lensa.app-on-pc.html" target="_blank">lensa</a></td> 
+																					<td><a href="https://github.com/sczhou/CodeFormer" target="_blank">CodeFormer AI 智能修復臉部神器！on github</a></td>
+																					<td><a href="https://www.canva.com/features/change-background-color-of-image/" target="_blank">Change the background color !</a></td>
+																			</tr>
+																			</table>	
+																		</ul>
+												</div>	
+											</section>
+										</main>	
+												<h3>对话框</h3>
+														<button onclick="showDialog()">联络信息</button>
+														<div id="dialog" class="dialog">
+														<div onclick="closeDialog()">X</div>
+																在这里面加入对话框中的内容<br/>
+																例如Email:test@test.com
+														</div><br/>
+												<footer>该网站共二页，请按<a href="index.html" class="button">Back</a>按钮转第一页。</footer>
+										</body>
+										</html>
+										
+										
