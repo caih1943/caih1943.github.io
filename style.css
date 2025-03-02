@@ -2,7 +2,7 @@ main{
 	display:flex; flex-wrap:wrap;
 	justify-content:center;
 	align-items:stretch;
-    background-color:#cccccc;
+    background-color:rgba(70, 81, 49, 0.316);
 }
 main>.box
 {	flex:auto;
