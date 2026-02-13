@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>科普與航太科技影片展示中心</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg: #020617;
+            --card-bg: #111827;
+            --text: #F8FAFC;
+            --accent: #38BDF8;
+            --subtext: #94A3B8;
+            --modal-bg: rgba(0, 0, 0, 0.95);
+        }
+
+        body {
+            background-color: var(--bg);
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 60px 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        h1 {
+            font-size: 3rem;
+            margin: 0;
+            background: linear-gradient(to right, #60A5FA, #A78BFA);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-weight: 800;
+        }
+
+        p.subtitle {
+            font-size: 1.1rem;
+            color: var(--subtext);
+            margin-top: 15px;
+            letter-spacing: 2px;
+        }
+
+        .video-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 30px;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .video-card {
+            background: var(--card-bg);
+            border-radius: 16px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+        }
+
+        .video-card:hover {
+            transform: translateY(-8px);
+            border-color: var(--accent);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        .thumbnail-container {
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .thumbnail-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .video-card:hover img {
+            transform: scale(1.05);
+        }
+
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.3);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .video-card:hover .play-overlay {
+            opacity: 1;
+        }
+
+        .play-icon {
+            width: 50px;
+            height: 50px;
+            background: var(--accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #000;
+            font-size: 24px;
+        }
+
+        .info {
+            padding: 24px;
+            flex-grow: 1;
+        }
+
+        .tag {
+            display: inline-block;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.7rem;
+            background: rgba(56, 189, 248, 0.1);
+            color: var(--accent);
+            margin-bottom: 12px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .description {
+            font-size: 0.9rem;
+            color: var(--subtext);
+            line-height: 1.5;
+            margin-bottom: 15px;
+        }
+
+        .status-bar {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.8rem;
+            color: var(--accent);
+            opacity: 0.8;
+        }
+
+        .dot {
+            width: 6px;
+            height: 6px;
+            border-radius: 50%;
+            background: #10B981;
+        }
+
+        .section-title {
+            width: 100%;
+            max-width: 1200px;
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin: 40px 0 25px;
+            color: var(--accent);
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .section-title::after {
+            content: "";
+            flex-grow: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        /* Modal Styles */
+        #videoModal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--modal-bg);
+            z-index: 1000;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .modal-content {
+            position: relative;
+            width: 90%;
+            max-width: 1000px;
+            aspect-ratio: 16 / 9;
+            background: #000;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: -40px;
+            right: 0;
+            color: #fff;
+            font-size: 30px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: var(--accent);
+            font-size: 1.2rem;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>影片展示中心</h1>
+        <p class="subtitle">EXPLORE THE UNIVERSE THROUGH ADVANCED VISUALS</p>
+    </header>
+
+    <div id="gallery-content">
+        <!-- Content will be injected by JavaScript -->
+    </div>
+
+    <!-- Video Modal -->
+    <div id="videoModal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <div class="loading-spinner">正在載入雲端影片...</div>
+            <div id="video-player-container"></div>
+        </div>
+    </div>
+
+    <script>
+        // ==========================================
+        // 影片數據庫 (請在這裡更新您的 Google Drive 連結)
+        // ==========================================
+        const videoData = [
+            {
+                section: "基礎物理系列",
+                videos: [
+                    {
+                        title: "牛頓運動定律",
+                        tag: "CLASSICAL PHYSICS",
+                        desc: "從慣性到作用力，解析構建現代物理的基石。",
+                        thumb: "images/newton.png",
+                        type: "gdrive",
+                        source: "19ChcLPCBQzMsyfsep2q6lnbQShMI1r3u"
+                    },
+                    {
+                        title: "愛因斯坦相對論",
+                        tag: "MODERN PHYSICS",
+                        desc: "時空彎曲與質能等價，顛覆人類對現實的認知。",
+                        thumb: "images/relativity.png",
+                        type: "gdrive",
+                        source: "1BuNylDxKKKLnDwLPC9GJTDmkkyvBRVuO"
+                    },
+                    {
+                        title: "量子糾纏：奧秘連結",
+                        tag: "QUANTUM MECHANICS",
+                        desc: "探討亞原子粒子間那種超越時空的「遠距感應」。",
+                        thumb: "images/quantum.png",
+                        type: "gdrive",
+                        source: "1IFmQM7bKR_-NdFAc03mQX_2e4A9B0NIM"
+                    },
+                    {
+                        title: "麥克斯韋方程組",
+                        tag: "ELECTROMAGNETISM",
+                        desc: "揭示光、電與磁的統一，現代無線通訊的物理基石。",
+                        thumb: "images/maxwell.png",
+                        type: "gdrive",
+                        source: "1J3zADavQSY9LZcMqcRsakiHhdpxfAo2G"
+                    }
+                ]
+            },
+            {
+                section: "前沿 AI 科技",
+                videos: [
+                    {
+                        title: "深度學習：認知進化",
+                        tag: "ARTIFICIAL INTELLIGENCE",
+                        desc: "模擬大腦神經架構，實現機器智能的跨越式突破。",
+                        thumb: "images/deeplearning.png",
+                        type: "gdrive",
+                        source: "1SgBDor-VEW-DOl-MAMXYySq24UMTX1dw"
+                    },
+                    {
+                        title: "Transformer：注意力機制",
+                        tag: "LLM ARCHITECTURE",
+                        desc: "當前大語言模型的靈魂架構，重塑人機互動。",
+                        thumb: "images/transformer.png",
+                        type: "gdrive",
+                        source: "1TKreeXnETCGH_5XOiQuD9Uj4yU6ifgF_"
+                    },
+                    {
+                        title: "摩爾定律：數位脈動",
+                        tag: "SEMICONDUCTOR TECH",
+                        desc: "回顧半導體效能翻倍的黃金法則。",
+                        thumb: "images/moore.png",
+                        type: "gdrive",
+                        source: "1TTNT0cLVR6GDQPLxoiqfQyhk7VAIslFw"
+                    }
+                ]
+            },
+            {
+                section: "航太與衛星技術",
+                videos: [
+                    {
+                        title: "火箭慣性制導",
+                        tag: "AEROSPACE GUIDANCE",
+                        desc: "不依賴任何外部信號，引領人類精準飛向深空。",
+                        thumb: "images/rocket.png",
+                        type: "gdrive",
+                        source: "1eEKr3GjVLTLmVQSpHX1ye5MwGzIxR1Rj"
+                    },
+                    {
+                        title: "同步軌道：數位燈塔",
+                        tag: "ORBITAL MECHANICS",
+                        desc: "懸掛在地球上空三萬六千公里的通信中樞。",
+                        thumb: "images/satellite.png",
+                        type: "gdrive",
+                        source: "1fNXynfxBAZGOIXxBzJUZurld4IIgDQyx"
+                    },
+                    {
+                        title: "GPS：精確定位",
+                        tag: "GLOBAL POSITIONING",
+                        desc: "衛星星座與原子鐘，指引地球上的每一個角落。",
+                        thumb: "images/gps.png",
+                        type: "gdrive",
+                        source: "1nk_mIDiFAbRwxR2LUjfla7wCDkQFZSBo"
+                    }
+                ]
+            }
+        ];
+
+        // 渲染畫廊
+        function renderGallery() {
+            const container = document.getElementById('gallery-content');
+            let html = '';
+
+            videoData.forEach(section => {
+                html += `<div class="section-title">${section.section}</div>`;
+                html += `<div class="video-grid">`;
+
+                section.videos.forEach(video => {
+                    html += `
+                        <div class="video-card" onclick="playVideo('${video.type}', '${video.source}')">
+                            <div class="thumbnail-container">
+                                <img src="${video.thumb}" alt="${video.title}">
+                                <div class="play-overlay"><div class="play-icon">▶</div></div>
+                            </div>
+                            <div class="info">
+                                <span class="tag">${video.tag}</span>
+                                <div class="title">${video.title}</div>
+                                <div class="description">${video.desc}</div>
+                                <div class="status-bar">
+                                    <div class="dot"></div>
+                                    ${video.type === 'gdrive' ? 'Cloud Stream Ready' : 'Local Resource'}
+                                </div>
+                            </div>
+                        </div>
+                    `;
+                });
+
+                html += `</div>`;
+            });
+
+            container.innerHTML = html;
+        }
+
+        // 播放影片邏輯
+        function playVideo(type, source) {
+            const modal = document.getElementById('videoModal');
+            const playerContainer = document.getElementById('video-player-container');
+            const spinner = document.querySelector('.loading-spinner');
+
+            playerContainer.innerHTML = '';
+            modal.style.display = 'flex';
+
+            if (type === 'gdrive') {
+                if (!source) {
+                    alert("請先填入此影片的 Google Drive 檔案 ID！");
+                    closeModal();
+                    return;
+                }
+                spinner.style.display = 'block';
+                // 使用 Google Drive Preview 模式
+                const embedUrl = `https://drive.google.com/file/d/${source}/preview`;
+                playerContainer.innerHTML = `<iframe src="${embedUrl}" allow="autoplay" allowfullscreen></iframe>`;
+
+                // 隱藏載入提示（當 iframe 載入時）
+                playerContainer.querySelector('iframe').onload = () => {
+                    spinner.style.display = 'none';
+                };
+            } else {
+                // 本地或其它連結
+                window.open(source, '_blank');
+                modal.style.display = 'none';
+            }
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('videoModal');
+            const playerContainer = document.getElementById('video-player-container');
+            playerContainer.innerHTML = ''; // 停止播放
+            modal.style.display = 'none';
+        }
+
+        // 事件監聽
+        document.querySelector('.close-modal').onclick = closeModal;
+        window.onclick = (event) => {
+            if (event.target == document.getElementById('videoModal')) {
+                closeModal();
+            }
+        };
+
+        // 初始化
+        renderGallery();
+    </script>
+</body>
+
+</html>
