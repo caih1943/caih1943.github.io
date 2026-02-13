@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-	<meta charset="utf-8"/>
+	<meta charset="utf-8" />
 	<meta name="description" content="老蔡的网站，里面有很多链接内容" />
 	<meta name="author" content="Simon Cai" />
 	<meta name="keywords" content="html,我的著作,我的课程" />
-	<meta name="viewpoint" content="width=device-width, initial-scale=1.0, maximum-scale=1.0"/>
+	<meta name="viewpoint" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
 	<title>老蔡网页</title>
 	<!--网页标题左侧显示-->
 	<link rel="icon" href="C.ico" type="image/x-icon">
@@ -14,149 +15,206 @@
 	<!--引入外部CSS档案-->
 	<link rel="stylesheet" href="style.css" />
 	<script type="text/javascript">
-	function getData(pageName){
-		//Ajax:XMLHttpRequest 物件专门用来和伺服器做连线
-		var req=new XMLHttpRequest();
-		req.open("get", "https://caih1943.github.io/"+pageName);
-		req.onload=function(){    //load 事件，侦测连线的状态结束
-			//连线完成，做连线的处理
-			var content1=document.getElementById("content1");
-			content1.innerHTML=this.responseText;
-		};
-		req.send(); // 送出连线
-	}
+		function getData(pageName) {
+			// Ajax: XMLHttpRequest 物件专用来和伺服器做连线
+			var req = new XMLHttpRequest();
+			// 自動判斷環境：如果是在本地運行或文件名包含 local，則使用相對路徑；否則使用 GitHub 路徑
+			var url = (window.location.protocol === "file:" || window.location.hostname === "localhost")
+				? pageName
+				: "https://caih1943.github.io/" + pageName;
+
+			req.open("get", url);
+			req.onload = function () {
+				var content1 = document.getElementById("content1");
+				content1.innerHTML = this.responseText;
+				// 滾動到內容區域
+				content1.scrollIntoView({ behavior: 'smooth' });
+			};
+			req.send();
+		}
 	</script>
 </head>
 
 <body>
 	<h1>老蔡的网页！
-	<a href="laocaiHome.html" class="button">Next</a>
+		<a href="laocaiHome.html" class="button">Next</a>
 	</h1>
 	<p>这是我的网页。最初产生于九十年代，后来不用了，现经改进再启用，但内容完全不同了，用于保存我的链接资料。</p>
 
 	<button id="hide">Hide</button>
 	<button id="show">Show</button>
-	<nav style="display:flex";align-items:center;>
+	<nav style="display:flex" ;align-items:center;>
 		<div class="logo">我的著作链接：</div>
 		<div class="menu">我的旅游照演示：</div>
 		<div class="user">我的音乐链接：</div>
 	</nav>
 	<main>
 		<div class="box">
-				<ul class="items">
-					<li><a href="http://www.cas.cn/zt/kjzt/zgchy/" target="_blank"><img src="zgc.png" style="max-width:6.5em; max-height:6.1em;">中关村回忆</a>  
-					<a href="竺可桢校长和浙江大学.pdf" target="_blank"><img src="zkz.png" style="max-width:6.5em; max-height:6.1em;">竺可桢校长和浙江大学</a></br></li>
-					<li><a href="http://cn-library.rukomos.ru/zhong_guan_cun_hui_yi__265650-audiobook-read_online.html">中关村回忆（已不能下载）</a></li>
-					<li><a href="https://www.amazon.ca/s?k=Hengsheng+Cai&i=digital-text&dc&ref=a9_asc_1" target="_blank">我在亚马逊网站上的书籍</a></li>
-					<li><a href="以“求是”精神，正本溯源，李约瑟访问浙大补录.pdf"#page=1 target="_blank">以“求是”精神，正本溯源，李约瑟访问浙大补录（PDF）</a></li>
-					<li><a href="https://www.amazon.ca/%E6%8E%A2%E7%B4%A2%E6%B5%99%E5%A4%A7-%E6%9D%B1%E6%96%B9%E5%8A%8D%E6%A9%8B-%E4%B9%8B%E8%AA%AA-%E9%87%8D%E8%B5%B0%E6%B5%99%E5%A4%A7%E8%A5%BF%E9%81%B7%E8%B7%AF-Traditional-ebook/dp/B08136Q13N/ref=sr_1_1?keywords=%28Chinese+Edition%29B08136Q13N&qid=1573150194&s=digital-text&sr=1-1" target="_blank">探索浙大《东方剑桥》之说</a></li>
-					<li><a href="https://www.amazon.cn/s?k=%E6%98%86%E8%99%AB%E5%88%86%E7%B1%BB%E5%AD%A6&rh=n%3A116169071&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&ref=nb_sb_noss" target="_blank">昆虫分类学（修订版）蔡邦华著蔡晓明、黄复生修订</a></li>
-					<li><a href="https://www.amazon.cn/s?k=%E8%94%A1%E9%82%A6%E5%8D%8E%E9%99%A2%E5%A3%AB%E8%AF%9E%E8%BE%B0110%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%96%87%E9%9B%86&i=digital-text&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&ref=nb_sb_noss" target="_blank">蔡邦华院士诞辰110周年纪念文集</a></li>
-					<li><a href="蔡邦华院士诞辰110周年纪念文集.pdf"#page=1 target="_blank">蔡邦华院士诞辰110周年纪念文集（PDF）</a></li>
-					<li><a href="https://mp.weixin.qq.com/s/ffHHDrN3RZb2pI4ItZi6aA"  target="_blank">震撼！开国大典上的10位浙大人！</a></li>
-				</ul>
-					<h3>请按以下按钮，在本页最下方弹出的页面，选择你要看的内容。</h3>
-					<button type="button" onclick="getData('cai110.htm');">蔡邦华院士诞辰110周年纪念视频</button></br></br>
-					<button type="button" onclick="getData('zgchy.htm');">中关村回忆老科学家演示集</button></br></br>
-					<button type="button" onclick="getData('indexpdf.htm');">老蔡的PDF文件页！</button>
-					</br>
-				</hr>
+			<ul class="items">
+				<li><a href="http://www.cas.cn/zt/kjzt/zgchy/" target="_blank"><img src="zgc.png"
+							style="max-width:6.5em; max-height:6.1em;">中关村回忆</a>
+					<a href="竺可桢校长和浙江大学.pdf" target="_blank"><img src="zkz.png"
+							style="max-width:6.5em; max-height:6.1em;">竺可桢校长和浙江大学</a></br>
+				</li>
+				<li><a
+						href="http://cn-library.rukomos.ru/zhong_guan_cun_hui_yi__265650-audiobook-read_online.html">中关村回忆（已不能下载）</a>
+				</li>
+				<li><a href="https://www.amazon.ca/s?k=Hengsheng+Cai&i=digital-text&dc&ref=a9_asc_1"
+						target="_blank">我在亚马逊网站上的书籍</a></li>
+				<li><a href="以“求是”精神，正本溯源，李约瑟访问浙大补录.pdf" #page=1 target="_blank">以“求是”精神，正本溯源，李约瑟访问浙大补录（PDF）</a></li>
+				<li><a href="https://www.amazon.ca/%E6%8E%A2%E7%B4%A2%E6%B5%99%E5%A4%A7-%E6%9D%B1%E6%96%B9%E5%8A%8D%E6%A9%8B-%E4%B9%8B%E8%AA%AA-%E9%87%8D%E8%B5%B0%E6%B5%99%E5%A4%A7%E8%A5%BF%E9%81%B7%E8%B7%AF-Traditional-ebook/dp/B08136Q13N/ref=sr_1_1?keywords=%28Chinese+Edition%29B08136Q13N&qid=1573150194&s=digital-text&sr=1-1"
+						target="_blank">探索浙大《东方剑桥》之说</a></li>
+				<li><a href="https://www.amazon.cn/s?k=%E6%98%86%E8%99%AB%E5%88%86%E7%B1%BB%E5%AD%A6&rh=n%3A116169071&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&ref=nb_sb_noss"
+						target="_blank">昆虫分类学（修订版）蔡邦华著蔡晓明、黄复生修订</a></li>
+				<li><a href="https://www.amazon.cn/s?k=%E8%94%A1%E9%82%A6%E5%8D%8E%E9%99%A2%E5%A3%AB%E8%AF%9E%E8%BE%B0110%E5%91%A8%E5%B9%B4%E7%BA%AA%E5%BF%B5%E6%96%87%E9%9B%86&i=digital-text&__mk_zh_CN=%E4%BA%9A%E9%A9%AC%E9%80%8A%E7%BD%91%E7%AB%99&ref=nb_sb_noss"
+						target="_blank">蔡邦华院士诞辰110周年纪念文集</a></li>
+				<li><a href="蔡邦华院士诞辰110周年纪念文集.pdf" #page=1 target="_blank">蔡邦华院士诞辰110周年纪念文集（PDF）</a></li>
+				<li><a href="https://mp.weixin.qq.com/s/ffHHDrN3RZb2pI4ItZi6aA" target="_blank">震撼！开国大典上的10位浙大人！</a>
+				</li>
+			</ul>
+			<h3>请按以下按钮，在本页最下方弹出的页面，选择你要看的内容。</h3>
+			<button type="button" onclick="getData('cai110.htm');">蔡邦华院士诞辰110周年纪念视频</button></br></br>
+			<button type="button" onclick="getData('zgchy.htm');">中关村回忆老科学家演示集</button></br></br>
+			<button type="button" onclick="getData('indexpdf.htm');">老蔡的PDF文件页！</button>
+			<br /><br />
+			<button type="button" onclick="getData('videos_showcase.htm');"
+				style="background-color: #003344; color: white; padding: 10px 20px; border-radius: 8px; font-weight: bold; border: 2px solid #38BDF8; cursor: pointer;">
+				🚀 科普與航太科技影片展示中心
+			</button>
+			<br /><br />
+			<hr />
 		</div>
 		<div class="box">
-					<span class="items">
-						<iframe width="218" height="224" src="https://show.zohopublic.com/publish/butgbaa3bfe791ba54093bb8a88843c0f5cf9" name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%B8%80%EF%BC%89" scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-						<iframe width="218" height="224" src="https://show.zohopublic.com/publish/butgb858103d2b1ed4336841072410fcb3011" name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%BA%8C%EF%BC%89" scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-						<iframe width="218" height="224" src="https://show.zohopublic.com/publish/butgb9e582a51634341c2a96cb01bbfd4d10c" name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%B8%89%EF%BC%89" scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-						<iframe width="218" height="224" src="https://show.zohopublic.com/publish/7rbda8840f88529df4fdcad8f81cd830c892c" name="%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%8F%AD%E8%8A%99%E5%92%8C%E5%9D%8E%E8%8E%AB%E5%B0%94%E4%BA%8C%E5%91%A8%E6%B8%B82019.8" scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-					</span>
-					</br>
-						<button type="button" onclick="getData('travel.htm');">我的旅游视频</button>	
-					</br>
-					</hr>
+			<span class="items">
+				<iframe width="218" height="224"
+					src="https://show.zohopublic.com/publish/butgbaa3bfe791ba54093bb8a88843c0f5cf9"
+					name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%B8%80%EF%BC%89" scrolling=no frameBorder="0"
+					style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true"
+					webkitallowfullscreen="true"></iframe>
+				<iframe width="218" height="224"
+					src="https://show.zohopublic.com/publish/butgb858103d2b1ed4336841072410fcb3011"
+					name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%BA%8C%EF%BC%89" scrolling=no frameBorder="0"
+					style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true"
+					webkitallowfullscreen="true"></iframe>
+				<iframe width="218" height="224"
+					src="https://show.zohopublic.com/publish/butgb9e582a51634341c2a96cb01bbfd4d10c"
+					name="%E7%91%9E%E5%A3%AB%E6%B8%B82019%EF%BC%88%E4%B8%89%EF%BC%89" scrolling=no frameBorder="0"
+					style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true"
+					webkitallowfullscreen="true"></iframe>
+				<iframe width="218" height="224"
+					src="https://show.zohopublic.com/publish/7rbda8840f88529df4fdcad8f81cd830c892c"
+					name="%E5%8A%A0%E6%8B%BF%E5%A4%A7%E7%8F%AD%E8%8A%99%E5%92%8C%E5%9D%8E%E8%8E%AB%E5%B0%94%E4%BA%8C%E5%91%A8%E6%B8%B82019.8"
+					scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true"
+					mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
+			</span>
+			</br>
+			<button type="button" onclick="getData('travel.htm');">我的旅游视频</button>
+			</br>
+			</hr>
 		</div>
-		<div class="box">
-				<ul class="items">
-					<li><a href="https://www.youtube.com/watch?v=dXApBvgUNBQ" target="_blank">托賽里小夜曲(Toselli Serenade) André Rieu </a></li>
-					<li><a href="https://www.youtube.com/watch?v=vG_FBIbGuvg" target="_blank">莫札特 - G大調第13 號小夜曲,K.525（01.快板）</a></li>
-					<li><a href="https://www.youtube.com/watch?v=ANsbPsPzScU" target="_blank">三大男高音 THE 3 TENORS「小夜曲 (Ständchen)」</a></li>
-					<li><a href="https://www.youtube.com/watch?v=HKi2Qzj1TLQ" target="_blank">托賽里《夜鶯小夜曲》</a></li>
-					<li><a href="https://www.youtube.com/watch?v=5kNpv5qMyOQ"target="_blank" >世界十大音樂家的小夜曲 </a></li>
-					<li><a href="https://www.youtube.com/watch?v=gZlJuaoG6-U" target="_blank">舒伯特小夜曲</a></li>
-					<li><a href="https://www.youtube.com/watch?v=c57aFp4LAO4" target="_blank">蓝色多瑙河</a></li>
-					<li><a href="https://www.youtube.com/watch?v=zzfTW6HbrvU" target="_blank">皇帝圓舞曲</a></li>
-					<li><a href="https://www.youtube.com/watch?v=aOcWrhCd4M8" target="_blank">春之声圓舞曲</a></li>
-					<li><a href="https://www.youtube.com/watch?v=d44qk2IQ7cI"target="_blank" >贝多芬第五交响乐（命运） Beethoven 5 - 小泽征尔指挥</a></li>
-					<li><a href="https://www.youtube.com/watch?v=adFfq89ZfiM"target="_blank" >贝多芬第六交响乐（田园） Beethoven 6 - 卡拉扬指挥</a></li>
-					<li><a href="https://www.youtube.com/watch?v=ahvrHrPGi1k"target="_blank" >贝多芬第七交响乐（Beethoven 7)</a></li>
-					<li><a href="https://www.youtube.com/watch?v=gCkndZBnMLw"target="_blank" >贝多芬第八交响乐（Beethoven 8)</a></li>
-					<li><a href="https://www.youtube.com/watch?v=rOjHhS5MtvA&t=3146s" target="_blank">贝多芬第九交响乐 - Chicago Symphony Orchestra</a></li>
-					<li><a href="https://www.youtube.com/watch?v=_iudxZy8R1I&list=RDAHpVCCar9nQ&index=3" target="_blank">難以忘懷的經典《沈思曲》（冥想曲）</a></li>
-				</ul>				
-					<button type="button" onclick="getData('musics.htm');">我的音乐视频</button>	
-					</br>
-		</div>	
-	</nav>
-	</main>
-	<nav style="display:flex";align-items:center;>
-			<div class="logo">我的课程链接：</div>
-			<div class="menu">大型系列纪录片：</div>
-			<div class="user">COVID-19 链接：</div>
-	</nav>	
-	<main>
-		<div class="box">
-				<ul class="items">					
-					<li><a href="https://www.w3schools.com/" target="_blank">W3 School</a></li>
-					<li><a href="https://www.python-course.eu/python3_course.php/" target="_blank">Python Course</a></li>
-					<li><a href="https://www.sololearn.com/learning/1073/2269/4557/1" target="_blank">sololearn quiz</a></li>
-					<li><a href="https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg" target="_blank">Morvan课程</a></li>
-					<li><a href="https://www.youtube.com/channel/UC2ggjtuuWvxrHHHiaDH1dlQ" target="_blank">Hung-yi Lee课程</a></li>
-					<li><a href="https://codepen.io/pen/" target="_blank">CodePen</a></li>
-					<li><a href="https://www.youtube.com/watch?v=-tRp1IOlKkI" target="_blank">HTML&&HTTPS</a></li>
-					<li><a href="https://www.youtube.com/watch?v=CLUPkcLQm64" target="_blank">1小时HTML课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=Ml78vnNTBLw" target="_blank">2小时CSS课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=yZwlW5INhgk" target="_blank">3小时Javascript课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=zdMUJJKFdsU" target="_blank">4小时Python课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=gvRXjsrpCHw " target="_blank">3小时SQL课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=mYX9AaJF2lw" target="_blank">Python自动化操作Excel课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=ximjGyZ93YQ" target="_blank">网页爬虫、网页自动化课程</a></li>
-					<li><a href="https://www.youtube.com/watch?v=xua4Gno7xLo" target="_blank">【python】requests发送http请求 ｜ 模拟发文、爬取资讯</a></li>
-				</ul>
-				<button type="button" onclick="getData('learning.htm');">我的学习视频</button>	
-			</br>	
-	</div>
 		<div class="box">
 			<ul class="items">
-					<span class="items">
-						<video src="./中国教育报道_先生回来展_10212012.mp4" controls height="238" width="238">浏览器无法载入</video>	
-						<iframe height="208" width="218" src="https://show.zohopublic.com/publish/nqcgjc976083a6224444694e2c743b5d1e56c" name="%E8%94%A1%E5%B0%8F%E9%BA%97%E7%94%BB%E5%86%8C" scrolling=no frameBorder="0" style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true" webkitallowfullscreen="true"></iframe>
-					</span>
-					</br>
-					<ul class="items">					
-					<a href="https://mp.weixin.qq.com/s/bSlv2CkBv0zkYiH9SfXzxw" target="_blank">大型系列纪录片《先生》十集</a>
-					</br>		
-					<a href="http://v.qq.com/detail/s/sdp0010051e1w6k.html?" target="_blank">系列纪录片《百年南社》六集</a>
-					</ul>
-					<button type="button" onclick="getData('southwestU.htm');">西南联大纪录片</button>
+				<li><a href="https://www.youtube.com/watch?v=dXApBvgUNBQ" target="_blank">托賽里小夜曲(Toselli Serenade) André
+						Rieu </a></li>
+				<li><a href="https://www.youtube.com/watch?v=vG_FBIbGuvg" target="_blank">莫札特 - G大調第13
+						號小夜曲,K.525（01.快板）</a></li>
+				<li><a href="https://www.youtube.com/watch?v=ANsbPsPzScU" target="_blank">三大男高音 THE 3 TENORS「小夜曲
+						(Ständchen)」</a></li>
+				<li><a href="https://www.youtube.com/watch?v=HKi2Qzj1TLQ" target="_blank">托賽里《夜鶯小夜曲》</a></li>
+				<li><a href="https://www.youtube.com/watch?v=5kNpv5qMyOQ" target="_blank">世界十大音樂家的小夜曲 </a></li>
+				<li><a href="https://www.youtube.com/watch?v=gZlJuaoG6-U" target="_blank">舒伯特小夜曲</a></li>
+				<li><a href="https://www.youtube.com/watch?v=c57aFp4LAO4" target="_blank">蓝色多瑙河</a></li>
+				<li><a href="https://www.youtube.com/watch?v=zzfTW6HbrvU" target="_blank">皇帝圓舞曲</a></li>
+				<li><a href="https://www.youtube.com/watch?v=aOcWrhCd4M8" target="_blank">春之声圓舞曲</a></li>
+				<li><a href="https://www.youtube.com/watch?v=d44qk2IQ7cI" target="_blank">贝多芬第五交响乐（命运） Beethoven 5 -
+						小泽征尔指挥</a></li>
+				<li><a href="https://www.youtube.com/watch?v=adFfq89ZfiM" target="_blank">贝多芬第六交响乐（田园） Beethoven 6 -
+						卡拉扬指挥</a></li>
+				<li><a href="https://www.youtube.com/watch?v=ahvrHrPGi1k" target="_blank">贝多芬第七交响乐（Beethoven 7)</a></li>
+				<li><a href="https://www.youtube.com/watch?v=gCkndZBnMLw" target="_blank">贝多芬第八交响乐（Beethoven 8)</a></li>
+				<li><a href="https://www.youtube.com/watch?v=rOjHhS5MtvA&t=3146s" target="_blank">贝多芬第九交响乐 - Chicago
+						Symphony Orchestra</a></li>
+				<li><a href="https://www.youtube.com/watch?v=_iudxZy8R1I&list=RDAHpVCCar9nQ&index=3"
+						target="_blank">難以忘懷的經典《沈思曲》（冥想曲）</a></li>
+			</ul>
+			<button type="button" onclick="getData('musics.htm');">我的音乐视频</button>
+			</br>
+		</div>
+		</nav>
+	</main>
+	<nav style="display:flex" ;align-items:center;>
+		<div class="logo">我的课程链接：</div>
+		<div class="menu">大型系列纪录片：</div>
+		<div class="user">COVID-19 链接：</div>
+	</nav>
+	<main>
+		<div class="box">
+			<ul class="items">
+				<li><a href="https://www.w3schools.com/" target="_blank">W3 School</a></li>
+				<li><a href="https://www.python-course.eu/python3_course.php/" target="_blank">Python Course</a></li>
+				<li><a href="https://www.sololearn.com/learning/1073/2269/4557/1" target="_blank">sololearn quiz</a>
+				</li>
+				<li><a href="https://www.youtube.com/channel/UCdyjiB5H8Pu7aDTNVXTTpcg" target="_blank">Morvan课程</a></li>
+				<li><a href="https://www.youtube.com/channel/UC2ggjtuuWvxrHHHiaDH1dlQ" target="_blank">Hung-yi Lee课程</a>
+				</li>
+				<li><a href="https://codepen.io/pen/" target="_blank">CodePen</a></li>
+				<li><a href="https://www.youtube.com/watch?v=-tRp1IOlKkI" target="_blank">HTML&&HTTPS</a></li>
+				<li><a href="https://www.youtube.com/watch?v=CLUPkcLQm64" target="_blank">1小时HTML课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=Ml78vnNTBLw" target="_blank">2小时CSS课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=yZwlW5INhgk" target="_blank">3小时Javascript课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=zdMUJJKFdsU" target="_blank">4小时Python课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=gvRXjsrpCHw " target="_blank">3小时SQL课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=mYX9AaJF2lw" target="_blank">Python自动化操作Excel课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=ximjGyZ93YQ" target="_blank">网页爬虫、网页自动化课程</a></li>
+				<li><a href="https://www.youtube.com/watch?v=xua4Gno7xLo" target="_blank">【python】requests发送http请求 ｜
+						模拟发文、爬取资讯</a></li>
+			</ul>
+			<button type="button" onclick="getData('learning.htm');">我的学习视频</button>
+			</br>
+		</div>
+		<div class="box">
+			<ul class="items">
+				<span class="items">
+					<video src="./中国教育报道_先生回来展_10212012.mp4" controls height="238" width="238">浏览器无法载入</video>
+					<iframe height="208" width="218"
+						src="https://show.zohopublic.com/publish/nqcgjc976083a6224444694e2c743b5d1e56c"
+						name="%E8%94%A1%E5%B0%8F%E9%BA%97%E7%94%BB%E5%86%8C" scrolling=no frameBorder="0"
+						style="border:1px solid #AABBCC" allowfullscreen="true" mozallowfullscreen="true"
+						webkitallowfullscreen="true"></iframe>
+				</span>
 				</br>
-				</div>					
-				<br/>
-			<div class="box">
-					<ul class="items">
-						<li><a href="https://www.worldometers.info/coronavirus/" target="_blank">全球COVID-19每日病例统计</a></li>
-						<li><a href="https://superpyq.com/covid/ca/" target="_blank">加拿大COVID-19每日病例统计</a></li>
-						<li><a href="https://www.ottawapublichealth.ca/en/reports-research-and-statistics/daily-covid19-dashboard.aspx" target="_blank">渥太华COVID-19每日病例统计</a></li>
-						<li><a href="https://coronavirus.jhu.edu/map.html" target="_blank">COVID-19 JPU每日病例统计</a></li>
-						<li><a href="https://covid19-projections.com/" target="_blank">Covid-19 Projection Using Machine Learning(Youyang Gu)</a></li>
-						<li><a href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html#a1" target="_blank">Canada Covid-19 图例;</a></li>
-						<img class="icon-image" src="covid-19.jpeg" alt="covid-19"></a>
-						<li><a href="https://superpyq.com/data/img/canada-covid_graph.jpg?1632697043" target="_blank">加拿大七天平均新增图示</a></li>
-						<li><a href="https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data/Canada_medical_cases_by_province" target="_blank">加拿大各省每日COVID-19维基百科.</a></li>
-					</ul>
-			</div>
-				
-</main>
-<div id="content1"></div>
-</div>
-<footer>该网站共二页，请按<a href="laocaiHome.html" class="button">Next</a>按钮转第二页。</footer>
+				<ul class="items">
+					<a href="https://mp.weixin.qq.com/s/bSlv2CkBv0zkYiH9SfXzxw" target="_blank">大型系列纪录片《先生》十集</a>
+					</br>
+					<a href="http://v.qq.com/detail/s/sdp0010051e1w6k.html?" target="_blank">系列纪录片《百年南社》六集</a>
+				</ul>
+				<button type="button" onclick="getData('southwestU.htm');">西南联大纪录片</button>
+				</br>
+		</div>
+		<br />
+		<div class="box">
+			<ul class="items">
+				<li><a href="https://www.worldometers.info/coronavirus/" target="_blank">全球COVID-19每日病例统计</a></li>
+				<li><a href="https://superpyq.com/covid/ca/" target="_blank">加拿大COVID-19每日病例统计</a></li>
+				<li><a href="https://www.ottawapublichealth.ca/en/reports-research-and-statistics/daily-covid19-dashboard.aspx"
+						target="_blank">渥太华COVID-19每日病例统计</a></li>
+				<li><a href="https://coronavirus.jhu.edu/map.html" target="_blank">COVID-19 JPU每日病例统计</a></li>
+				<li><a href="https://covid19-projections.com/" target="_blank">Covid-19 Projection Using Machine
+						Learning(Youyang Gu)</a></li>
+				<li><a href="https://www.canada.ca/en/public-health/services/diseases/2019-novel-coronavirus-infection.html#a1"
+						target="_blank">Canada Covid-19 图例;</a></li>
+				<img class="icon-image" src="covid-19.jpeg" alt="covid-19"></a>
+				<li><a href="https://superpyq.com/data/img/canada-covid_graph.jpg?1632697043"
+						target="_blank">加拿大七天平均新增图示</a></li>
+				<li><a href="https://en.wikipedia.org/wiki/Template:COVID-19_pandemic_data/Canada_medical_cases_by_province"
+						target="_blank">加拿大各省每日COVID-19维基百科.</a></li>
+			</ul>
+		</div>
+
+	</main>
+	<div id="content1"></div>
+	</div>
+	<footer>该网站共二页，请按<a href="laocaiHome.html" class="button">Next</a>按钮转第二页。</footer>
 </body>
+
 </html>
