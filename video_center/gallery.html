@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>科普與航太科技影片展示中心</title>
+    <title>科普与航天科技影片展示中心</title>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -208,7 +208,7 @@
             position: relative;
             width: 95vw;
             height: 90vh;
-            /* 使用高度佔比而非固定比例，確保空間最大化 */
+            /* 使用高度占比而非固定比例，确保空间最大化 */
             max-width: 1800px;
             background: #000;
             border-radius: 12px;
@@ -238,7 +238,7 @@
             cursor: pointer;
             font-weight: bold;
             z-index: 1005;
-            /* 確保在 iframe 之上 */
+            /* 确保在 iframe 之上 */
             background: rgba(0, 0, 0, 0.5);
             width: 40px;
             height: 40px;
@@ -277,7 +277,7 @@
 
 <body>
     <header>
-        <h1>影片展示中心</h1>
+        <h1>科普影视中心</h1>
         <p class="subtitle">EXPLORE THE UNIVERSE THROUGH ADVANCED VISUALS</p>
     </header>
 
@@ -289,47 +289,47 @@
     <div id="videoModal">
         <div class="modal-content">
             <span class="close-modal">&times;</span>
-            <div class="loading-spinner">正在載入雲端影片...</div>
+            <div class="loading-spinner">正在加载云端视频...</div>
             <div id="video-player-container"></div>
         </div>
     </div>
 
     <script>
         // ==========================================
-        // 影片數據庫 (已修復對應關係)
+        // 视频数据库 (简体中文优化版)
         // ==========================================
         const videoData = [
             {
-                section: "基礎物理系列",
+                section: "基础物理系列",
                 videos: [
                     {
-                        title: "牛頓運動定律",
-                        tag: "CLASSICAL PHYSICS",
-                        desc: "從慣性到作用力，解析構建現代物理的基石。",
+                        title: "牛顿三定律",
+                        tag: "经典物理",
+                        desc: "从惯性到作用力，解析构建现代物理的基石。",
                         thumb: "images/newton.png",
                         type: "gdrive",
                         source: "1fNXynfxBAZGOIXxBzJUZurld4IIgDQyx"
                     },
                     {
-                        title: "愛因斯坦相對論",
-                        tag: "MODERN PHYSICS",
-                        desc: "時空彎曲與質能等價，顛覆人類對現實的認知。",
+                        title: "爱因斯坦相对论",
+                        tag: "现代物理学",
+                        desc: "时空弯曲与质能等价，颠覆人类对现实的认知。",
                         thumb: "images/relativity.png",
                         type: "gdrive",
                         source: "1nk_mIDiFAbRwxR2LUjfla7wCDkQFZSBo"
                     },
                     {
-                        title: "量子糾纏：奧秘連結",
-                        tag: "QUANTUM MECHANICS",
-                        desc: "探討亞原子粒子間那種超越時空的「遠距感應」。",
+                        title: "量子纠缠：奥秘连结",
+                        tag: "量子力学",
+                        desc: "探讨亚原子粒子间那种超越时空的「远距感应」。",
                         thumb: "images/quantum.png",
                         type: "gdrive",
                         source: "1TKreeXnETCGH_5XOiQuD9Uj4yU6ifgF_"
                     },
                     {
-                        title: "麥克斯韋方程組",
-                        tag: "ELECTROMAGNETISM",
-                        desc: "揭示光、電與磁的統一，現代無線通訊的物理基石。",
+                        title: "麦克斯韦方程组",
+                        tag: "电磁学",
+                        desc: "揭示光、电与磁的统一，现代无线通讯的物理基石。",
                         thumb: "images/maxwell.png",
                         type: "gdrive",
                         source: "1TTNT0cLVR6GDQPLxoiqfQyhk7VAIslFw"
@@ -340,25 +340,25 @@
                 section: "前沿 AI 科技",
                 videos: [
                     {
-                        title: "深度學習：認知進化",
-                        tag: "ARTIFICIAL INTELLIGENCE",
-                        desc: "模擬大腦神經架構，實現機器智能的跨越式突破。",
+                        title: "深度学习：认知进化",
+                        tag: "人工智能",
+                        desc: "模拟大脑神经架构，实现机器智能的跨越式突破。",
                         thumb: "images/deeplearning.png",
                         type: "gdrive",
                         source: "1BuNylDxKKKLnDwLPC9GJTDmkkyvBRVuO"
                     },
                     {
-                        title: "Transformer：注意力機制",
-                        tag: "LLM ARCHITECTURE",
-                        desc: "當前大語言模型的靈魂架構，重塑人機互動。",
+                        title: "Transformer：注意力机制",
+                        tag: "大模型架构",
+                        desc: "当前大语言模型的灵魂架构，重塑人机互动。",
                         thumb: "images/transformer.png",
                         type: "gdrive",
                         source: "1IFmQM7bKR_-NdFAc03mQX_2e4A9B0NIM"
                     },
                     {
-                        title: "摩爾定律：數位脈動",
-                        tag: "SEMICONDUCTOR TECH",
-                        desc: "回顧半導體效能翻倍的黃金法則。",
+                        title: "摩尔定律：数字脉动",
+                        tag: "半导体技术",
+                        desc: "回顾半导体效能翻倍的黄金法则。",
                         thumb: "images/moore.png",
                         type: "gdrive",
                         source: "1J3zADavQSY9LZcMqcRsakiHhdpxfAo2G"
@@ -366,28 +366,28 @@
                 ]
             },
             {
-                section: "航太與衛星技術",
+                section: "航天与卫星技术",
                 videos: [
                     {
-                        title: "火箭慣性制導",
-                        tag: "AEROSPACE GUIDANCE",
-                        desc: "不依賴任何外部信號，引領人類精準飛向深空。",
+                        title: "火箭惯性制导",
+                        tag: "航空航天",
+                        desc: "不依赖任何外部信号，引领人类精准飞向深空。",
                         thumb: "images/rocket.png",
                         type: "gdrive",
                         source: "1SgBDor-VEW-DOl-MAMXYySq24UMTX1dw"
                     },
                     {
-                        title: "同步軌道：數位燈塔",
-                        tag: "ORBITAL MECHANICS",
-                        desc: "懸掛在地球上空三萬六千公里的通信中樞。",
+                        title: "同步轨道：数字灯塔",
+                        tag: "轨道力学",
+                        desc: "悬挂在地球上空三万六千公里的通信中枢。",
                         thumb: "images/satellite.png",
                         type: "gdrive",
                         source: "19ChcLPCBQzMsyfsep2q6lnbQShMI1r3u"
                     },
                     {
-                        title: "GPS：精確定位",
-                        tag: "GLOBAL POSITIONING",
-                        desc: "衛星星座與原子鐘，指引地球上的每一個角落。",
+                        title: "GPS：精确定位",
+                        tag: "全球定位系统",
+                        desc: "卫星星座与原子钟，指引地球上的每一个角落。",
                         thumb: "images/gps.png",
                         type: "gdrive",
                         source: "1eEKr3GjVLTLmVQSpHX1ye5MwGzIxR1Rj"
@@ -396,7 +396,7 @@
             }
         ];
 
-        // 渲染畫廊
+        // 渲染画廊
         function renderGallery() {
             const container = document.getElementById('gallery-content');
             let html = '';
@@ -418,7 +418,7 @@
                                 <div class="description">${video.desc}</div>
                                 <div class="status-bar">
                                     <div class="dot"></div>
-                                    ${video.type === 'gdrive' ? 'Cloud Stream Ready' : 'Local Resource'}
+                                    ${video.type === 'gdrive' ? 'Cloud Stream 就绪' : '本地资源'}
                                 </div>
                             </div>
                         </div>
@@ -431,7 +431,7 @@
             container.innerHTML = html;
         }
 
-        // 播放影片邏輯
+        // 播放视频逻辑
         function playVideo(type, source) {
             const modal = document.getElementById('videoModal');
             const playerContainer = document.getElementById('video-player-container');
@@ -442,7 +442,7 @@
 
             if (type === 'gdrive') {
                 if (!source) {
-                    alert("請先填入此影片的 Google Drive 檔案 ID！");
+                    alert("请先填入此视频的 Google Drive 文件 ID！");
                     closeModal();
                     return;
                 }
@@ -451,12 +451,12 @@
                 const embedUrl = `https://drive.google.com/file/d/${source}/preview`;
                 playerContainer.innerHTML = `<iframe src="${embedUrl}" allow="autoplay" allowfullscreen></iframe>`;
 
-                // 隱藏載入提示（當 iframe 載入時）
+                // 隐藏加载提示（当 iframe 加载时）
                 playerContainer.querySelector('iframe').onload = () => {
                     spinner.style.display = 'none';
                 };
             } else {
-                // 本地或其它連結
+                // 本地或其它链接
                 window.open(source, '_blank');
                 modal.style.display = 'none';
             }
@@ -469,7 +469,7 @@
             modal.style.display = 'none';
         }
 
-        // 事件監聽
+        // 事件监听
         document.querySelector('.close-modal').onclick = closeModal;
         window.onclick = (event) => {
             if (event.target == document.getElementById('videoModal')) {
