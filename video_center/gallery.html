@@ -206,26 +206,40 @@
 
         .modal-content {
             position: relative;
-            width: 95%;
-            max-width: 1400px;
-            max-height: 90vh;
+            width: 98%;
+            max-width: 1600px;
+            max-height: 95vh;
             /* 防止超過視窗高度 */
             aspect-ratio: 16 / 9;
             background: #000;
-            border-radius: 16px;
+            border-radius: 12px;
             overflow: hidden;
-            box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+            box-shadow: 0 0 100px rgba(0, 0, 0, 1);
             border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .close-modal {
             position: absolute;
-            top: -40px;
-            right: 0;
+            top: 20px;
+            right: 20px;
             color: #fff;
             font-size: 30px;
             cursor: pointer;
             font-weight: bold;
+            z-index: 1001;
+            background: rgba(0, 0, 0, 0.5);
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            transition: all 0.2s ease;
+        }
+
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.2);
+            transform: scale(1.1);
         }
 
         iframe {
@@ -240,7 +254,7 @@
             left: 50%;
             transform: translate(-50%, -50%);
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.5rem;
             display: none;
         }
     </style>
@@ -267,7 +281,7 @@
 
     <script>
         // ==========================================
-        // 影片數據庫 (請在這裡更新您的 Google Drive 連結)
+        // 影片數據庫 (已修復對應關係)
         // ==========================================
         const videoData = [
             {
@@ -279,7 +293,7 @@
                         desc: "從慣性到作用力，解析構建現代物理的基石。",
                         thumb: "images/newton.png",
                         type: "gdrive",
-                        source: "19ChcLPCBQzMsyfsep2q6lnbQShMI1r3u"
+                        source: "1fNXynfxBAZGOIXxBzJUZurld4IIgDQyx"
                     },
                     {
                         title: "愛因斯坦相對論",
@@ -287,7 +301,7 @@
                         desc: "時空彎曲與質能等價，顛覆人類對現實的認知。",
                         thumb: "images/relativity.png",
                         type: "gdrive",
-                        source: "1BuNylDxKKKLnDwLPC9GJTDmkkyvBRVuO"
+                        source: "1nk_mIDiFAbRwxR2LUjfla7wCDkQFZSBo"
                     },
                     {
                         title: "量子糾纏：奧秘連結",
@@ -295,7 +309,7 @@
                         desc: "探討亞原子粒子間那種超越時空的「遠距感應」。",
                         thumb: "images/quantum.png",
                         type: "gdrive",
-                        source: "1IFmQM7bKR_-NdFAc03mQX_2e4A9B0NIM"
+                        source: "1TKreeXnETCGH_5XOiQuD9Uj4yU6ifgF_"
                     },
                     {
                         title: "麥克斯韋方程組",
@@ -303,7 +317,7 @@
                         desc: "揭示光、電與磁的統一，現代無線通訊的物理基石。",
                         thumb: "images/maxwell.png",
                         type: "gdrive",
-                        source: "1J3zADavQSY9LZcMqcRsakiHhdpxfAo2G"
+                        source: "1TTNT0cLVR6GDQPLxoiqfQyhk7VAIslFw"
                     }
                 ]
             },
@@ -316,7 +330,7 @@
                         desc: "模擬大腦神經架構，實現機器智能的跨越式突破。",
                         thumb: "images/deeplearning.png",
                         type: "gdrive",
-                        source: "1SgBDor-VEW-DOl-MAMXYySq24UMTX1dw"
+                        source: "1BuNylDxKKKLnDwLPC9GJTDmkkyvBRVuO"
                     },
                     {
                         title: "Transformer：注意力機制",
@@ -324,7 +338,7 @@
                         desc: "當前大語言模型的靈魂架構，重塑人機互動。",
                         thumb: "images/transformer.png",
                         type: "gdrive",
-                        source: "1TKreeXnETCGH_5XOiQuD9Uj4yU6ifgF_"
+                        source: "1IFmQM7bKR_-NdFAc03mQX_2e4A9B0NIM"
                     },
                     {
                         title: "摩爾定律：數位脈動",
@@ -332,7 +346,7 @@
                         desc: "回顧半導體效能翻倍的黃金法則。",
                         thumb: "images/moore.png",
                         type: "gdrive",
-                        source: "1TTNT0cLVR6GDQPLxoiqfQyhk7VAIslFw"
+                        source: "1J3zADavQSY9LZcMqcRsakiHhdpxfAo2G"
                     }
                 ]
             },
@@ -345,7 +359,7 @@
                         desc: "不依賴任何外部信號，引領人類精準飛向深空。",
                         thumb: "images/rocket.png",
                         type: "gdrive",
-                        source: "1eEKr3GjVLTLmVQSpHX1ye5MwGzIxR1Rj"
+                        source: "1SgBDor-VEW-DOl-MAMXYySq24UMTX1dw"
                     },
                     {
                         title: "同步軌道：數位燈塔",
@@ -353,7 +367,7 @@
                         desc: "懸掛在地球上空三萬六千公里的通信中樞。",
                         thumb: "images/satellite.png",
                         type: "gdrive",
-                        source: "1fNXynfxBAZGOIXxBzJUZurld4IIgDQyx"
+                        source: "19ChcLPCBQzMsyfsep2q6lnbQShMI1r3u"
                     },
                     {
                         title: "GPS：精確定位",
@@ -361,7 +375,7 @@
                         desc: "衛星星座與原子鐘，指引地球上的每一個角落。",
                         thumb: "images/gps.png",
                         type: "gdrive",
-                        source: "1nk_mIDiFAbRwxR2LUjfla7wCDkQFZSBo"
+                        source: "1eEKr3GjVLTLmVQSpHX1ye5MwGzIxR1Rj"
                     }
                 ]
             }
