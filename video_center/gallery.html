@@ -206,13 +206,16 @@
 
         .modal-content {
             position: relative;
-            width: 90%;
-            max-width: 1000px;
+            width: 95%;
+            max-width: 1400px;
+            max-height: 90vh;
+            /* 防止超過視窗高度 */
             aspect-ratio: 16 / 9;
             background: #000;
-            border-radius: 12px;
+            border-radius: 16px;
             overflow: hidden;
-            box-shadow: 0 0 50px rgba(0, 0, 0, 0.8);
+            box-shadow: 0 0 80px rgba(0, 0, 0, 0.9);
+            border: 1px solid rgba(255, 255, 255, 0.1);
         }
 
         .close-modal {
