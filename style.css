@@ -33,9 +33,27 @@ nav>.clicker{
 	flex:none;width:320px;
 	background-color:blue;
 	text-align:right;
-}<!--标签名称选择器。-->
+}
+/* 标签名称选择器。 */
 body{
 	font-size:16px;font-family:"微软黑体";background-color:#00B315;
+}
+.page-title,
+.page-intro,
+main > .box{
+	will-change:transform, opacity;
+}
+.page-intro{
+	max-width:72rem;
+	margin:16px auto;
+	padding:0 12px;
+	line-height:1.7;
+}
+.feature-stage{
+	position:relative;
+	min-height:100vh;
+	align-content:center;
+	overflow:clip;
 }
 h1{
 	border-radius:10px;background-color:#003344;color:white;font-weight:bold;font-size:30px;
@@ -53,7 +71,7 @@ table{
 td{
 	border-bottom:1px solid #888888;padding:10px;
 }
-<!--表格中的第一对 tr -->
+/* 表格中的第一行 tr */
 tr:nth-child(1){
 	background-color:#7788aa;color:#ffffff;
 }
@@ -85,13 +103,13 @@ div.box{
 	text-align:center;padding:10px;
 }
 .button{
-	backgroud-color：#f44336 /*red */
-	border: none; color:white; padding；15px 32px;
+	background-color:#f44336;
+	border:none; color:white; padding:15px 32px;
 	text-align:center; display:inline-block;font-size:16px;
-	cursor:pointer;box-shadow:0 8px 16px 0 rgba(0,0,0,2),  0 6px  20px 0 rgba(0,0,0,0.19);
+	cursor:pointer;box-shadow:0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
 }
 .dialog{
-	position:fixed; top:100px;left:50%；transform(-100px,0px);width:200px;
+	position:fixed; top:100px;left:50%;transform:translate(-100px,0);width:200px;
 	padding:10px;border:1px solid #888888;
 	background-color:#eeeeee; box-shadow:0px 0px 10px #000000;
 	display:none;
@@ -104,21 +122,20 @@ footer{
 	background-color:#003344;color:white;font-weight:bold;font-size:18px;
 	text-align:center;padding:10px;text-align:center; 
 }
-<!--id 选择器。-->
+/* id 选择器。 */
 #btn{
 	border:1px solid #888888;cursor:pointer;
 	background-color:#4CAF50;padding:5px;;margin-left:auto;margin-right:auto;
 }
-<!--虚拟选择器：搭配其他选择器使用。-->
-<!-- :hover 虚拟选择器：鼠标移到目标上时，调用一组设定 -->
+/* :hover 虚拟选择器：鼠标移到目标上时调用。 */
 #btn:hover{
 	background-color:#888888;
 }
-<!-- :focus 虚拟选择器：当目标取得焦点时，调用一组设定 -->
+/* :focus 虚拟选择器：当目标取得焦点时调用。 */
 input:focus{
 	border:2px solid #ff0000;
 }
-<!--	阶层式选择器：搭配其他选择器使用
+/* 阶层式选择器。 */
 ul.favorite a{
 	color:#0000ff;text-align:left;
 }
@@ -130,8 +147,34 @@ ul.music a{
 }
 @media screen and (max-width:500px){
 	.head{font-size:24px;}
-	.content{width:100%;text-align:center;
-     main>.box{
-         width:90%
-     }   
+	.content{width:100%;text-align:center;}
+	main>.box{
+		width:90%;
+	}
+}
+
+@media screen and (max-width:768px){
+	body{
+		font-size:15px;
+	}
+	.feature-stage{
+		min-height:auto;
+		overflow:visible;
+	}
+	main > .box{
+		width:min(92%, 400px);
+	}
+}
+
+@media (prefers-reduced-motion: reduce){
+	html{
+		scroll-behavior:auto;
+	}
+	.page-title,
+	.page-intro,
+	main > .box{
+		will-change:auto;
+		animation:none !important;
+		transition:none !important;
+	}
 }

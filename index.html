@@ -6,7 +6,7 @@
 	<meta name="description" content="老蔡的网站，里面有很多链接内容" />
 	<meta name="author" content="Simon Cai" />
 	<meta name="keywords" content="html,我的著作,我的课程" />
-	<meta name="viewpoint" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 	<title>老蔡网页</title>
 	<!--网页标题左侧显示-->
 	<link rel="icon" href="C.ico" type="image/x-icon">
@@ -36,10 +36,10 @@
 </head>
 
 <body>
-	<h1>老蔡的网页！
+	<h1 class="page-title">老蔡的网页！
 		<a href="laocaiHome.html" class="button">Next</a>
 	</h1>
-	<p>这是我的网页。最初产生于九十年代，后来不用了，现经改进再启用，但内容完全不同了，用于保存我的链接资料。</p>
+	<p class="page-intro">这是我的网页。最初产生于九十年代，后来不用了，现经改进再启用，但内容完全不同了，用于保存我的链接资料。</p>
 
 	<button id="hide">Hide</button>
 	<button id="show">Show</button>
@@ -48,7 +48,7 @@
 		<div class="menu">我的旅游照演示：</div>
 		<div class="user">我的音乐链接：</div>
 	</nav>
-	<main>
+	<main class="feature-stage" aria-label="主要链接分类">
 		<div class="box">
 			<ul class="items">
 				<li><a href="http://www.cas.cn/zt/kjzt/zgchy/" target="_blank"><img src="zgc.png"
@@ -215,6 +215,9 @@
 	<div id="content1"></div>
 	</div>
 	<footer>该网站共二页，请按<a href="laocaiHome.html" class="button">Next</a>按钮转第二页。</footer>
+	<script src="vendor/gsap/gsap.min.js"></script>
+	<script src="vendor/gsap/ScrollTrigger.min.js"></script>
+	<script src="motion.js"></script>
 </body>
 
 </html>
